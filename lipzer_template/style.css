@@ -1,0 +1,41 @@
+#window{
+        border-radius: 15px;
+        padding: 15px;
+        color: white;
+        background-color: black;
+        margin-top: 50px;
+        box-shadow: 0 0 15px black;
+}
+.swapbox_select{
+    width: 50%;
+    float: left;
+}
+.swapbox{
+    overflow: auto;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #505050;
+    border-radius: 15px;
+    border: 1px solid #6a6a6a;
+}
+.token_select:hover{
+    padding: 5px 0;
+}
+.token_select:hover{
+    background-color:#6a6a6a;
+    cursor: pointer;
+}
+.token_list_img, .token_image{
+    width: 30px;
+}
+.modal-body{
+    height: 450px;
+    overflow: scroll;
+}
+.token_row{
+    padding: 5px 10px;
+}
+.token_row:hover{
+    background-color: #d6d5d5;
+    cursor: pointer;
+}

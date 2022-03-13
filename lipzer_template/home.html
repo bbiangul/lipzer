@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lipzer Exchange</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+ <!-- Google Font: Source Sans Pro -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+ <!-- daterange picker -->
+ <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+ <!-- iCheck for checkboxes and radio inputs -->
+ <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+ <!-- Bootstrap Color Picker -->
+ <link rel="stylesheet" href="plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+ <!-- Tempusdominus Bootstrap 4 -->
+ <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+ <!-- Select2 -->
+ <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+ <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+ <!-- Bootstrap4 Duallistbox -->
+ <link rel="stylesheet" href="plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+ <!-- BS Stepper -->
+ <link rel="stylesheet" href="plugins/bs-stepper/css/bs-stepper.min.css">
+ <!-- dropzonejs -->
+ <link rel="stylesheet" href="plugins/dropzone/min/dropzone.min.css">
+ <!-- Theme style -->
+ <link rel="stylesheet" href="dist/css/adminlte.min.css">
+ <!--Style CSS-->
+ <link rel="stylesheet" href="style.css">
+
+  <style>
+    /*BACKGROUND CONFIGURATION*/
+    @media (min-width: 1px) {
+    .background{
+      background-image: url('img/bgnft.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .columnsfooter{
+      flex-direction: column!important;
+    }
+    .logofooter{
+      width: 150px;
+      position: relative;
+      bottom: 25px;
+      right: 25px;
+    }
+    .img_topo{
+      width: 80%; 
+      margin-top: 20%;
+      left: 0px;
+      position: relative;
+    }
+  }
+    @media (min-width: 768px) {
+    .background{
+      background-image: url('img/bgnft.jpg');
+      background-repeat: no-repeat;
+      padding: 3em;
+      background-size: cover;
+    }
+    .columnsfooter{
+      flex-direction: unset!important;
+    }
+    .logofooter{
+      width: 150px;
+      position: relative;
+      bottom: 0px;
+      right: 0px;
+    }
+    .img_topo{
+      width: 80%;
+      margin-top: 0px;
+      left: 106px;
+      position: relative;
+    }
+    }
+    @media (min-width: 992px) {
+    .background{
+      background-image: url('img/imgback992.png');
+      background-repeat: no-repeat;
+      padding: 3em;
+      background-size: cover;
+    }
+    .columnsfooter{
+      flex-direction: unset!important;
+    }
+    .logofooter{
+      width: 150px;
+      position: relative;
+      bottom: 0px;
+      right: 0px;
+    }    
+    .img_topo{
+      width: 80%;
+      margin-top: 0px;
+      left: 106px;
+      position: relative;
+    }
+    }
+    @media (min-width: 1700px) {
+    .background{
+      background-image: url('img/imgback992.png');
+      background-repeat: no-repeat;
+      padding: 3em;
+      background-size: cover;
+    }
+    .columnsfooter{
+      flex-direction: unset!important;
+    }
+    .logofooter{
+      width: 150px;
+      position: relative;
+      bottom: 0px;
+      right: 0px;
+    }
+    .img_topo{
+      width: 80%;
+      margin-top: 0px;
+      left: 106px;
+      position: relative;
+    }
+    }
+
+/*COR DOS BTN*/
+.btn-lip {
+  color: #fff;
+  background-color: #EF0048;
+  border-color: #EF0048;
+  box-shadow: none;
+}
+
+.btn-lip:hover {
+  color: #fff;
+  background-color: #b30036;
+  border-color: #b30036;
+}
+
+.btn-lip:focus, .btn-lip.focus {
+  color: #fff;
+  background-color: #b30036;
+  border-color: #b30036;
+  box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+}
+
+.btn-lip.disabled, .btn-lip:disabled {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-lip:not(:disabled):not(.disabled):active, .btn-lip:not(:disabled):not(.disabled).active,
+.show > .btn-lip.dropdown-toggle {
+  color: #fff;
+  background-color: #ff004d;
+  border-color: #ff004d;
+}
+
+.btn-lip:not(:disabled):not(.disabled):active:focus, .btn-lip:not(:disabled):not(.disabled).active:focus,
+.show > .btn-lip.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0 #ff004d;
+}
+/*FIM DA COR DOS BTN*/
+
+/*COLORS ON NAVBAR*/
+
+.navbarcolor{
+  background-color: #EF0048;
+}
+.logo{
+  border: transparent;
+  border-radius: 20px;
+}
+/* FINISH COLOR ON NAVBAR */
+
+/*CSS DO FOOTER*/
+.menufooter{
+  color: white;
+}
+.titulosfooter{
+  color: #ff0048;
+  font-size: x-large;
+  font-weight: bold;
+}
+/*END CSS DO FOOTER*/
+/*USED IN THIS PAGE*/
+.mouse:hover{
+  cursor: pointer;
+  position:relative;
+  right: -1px;
+  top: -1px;
+}
+.back_box{
+  background: rgb(2, 18, 43, 0.6);
+}
+.custom-shape-divider-bottom-1643658669 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1643658669 svg {
+    position: relative;
+    display: block;
+    width: calc(245% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+}
+.custom-shape-divider-bottom-1643658669 .shape-fill {
+    fill: #c70038;
+}
+.custom-shape-divider-top-1643659964 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1643659964 svg {
+    position: relative;
+    display: block;
+    width: calc(245% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1643659964 .shape-fill {
+    fill: #c70038;
+}
+/*END USED IN THIS PAGE*/
+/*CARDS*/
+.margin{
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #d3d3d3;
+}
+.card_o{
+  background: #c70038;
+  box-shadow: none;
+}
+.title_card_down{
+  margin-top: 48px;
+}
+/*END CARDS*/
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbarcolor navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <img class="logo col-5 col-lg-auto col-md-auto mr-auto" src="img/logo.png">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a href="home.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a  href="nft.html" class="nav-link">NFT</a>
+        </li>
+        <li class="nav-item">
+          <a  href="swap.html" class="nav-link">Swap</a>
+        </li>
+        <li class="nav-item">
+          <a  href="marketplace.html" class="nav-link">NFT Marketplace</a>
+        </li>
+        <li class="nav-item">
+          <a  href="invite.html" class="nav-link">Friends</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="navbar-nav ml-auto n5">
+      <li class="nav-item">
+        <button type="button" class="btn btn-light block" style="color: #EF0048; border: transparent; border-radius: 20px;">Connect to Wallet</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div style="background-image: linear-gradient(1deg,#02183c, #010e24);">
+    <!-- Content Header (Page header) -->
+  <br>
+    <div class="container mt-5">
+      <div class="row justify-content-lg-around">
+        <div class="col-lg-6" style="color: white; position: relative; top: 50px;">
+          <h1>Bringing CeFi trading Experience | to the DeFi Ecosystem</h1>
+          <p style="margin-top: 5%">Lipzer is a Decentralized Trading Protocol operating on Binance Smart Chain (BSC), that enables traders, liquidity providers and developers to participate in an open financial market with no barriers to entry. We are going to make possible for the community to create buy or sell options (call or put) for cryptoassets, with specif deadline, quantity and prize.</p>
+          <p style="margin-top: 5%"><a style="color: #FF0048;" href="#">Learn More</a></p>
+          <button style="margin-top: 10%; width: 40%; border-radius: 40px; height: 13%; font-size: large;" type="button" class="btn btn-lip">Buy LIP</button>
+        </div>
+        <div class="col-lg-6">
+          <img class="img_topo" src="img/astronautwhole.png" style="margin-bottom: 20%;">
+        </div>
+      </div>
+    </div>
+    <div class="custom-shape-divider-bottom-1643658669" style="position: relative; top: -61px;">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+      </svg>
+    </div>
+    <div class="container-fluid" style="background: #c70038; margin-top: -4rem; margin-bottom: 9rem;height: 660px;">
+      <div class="row justify-content-lg-center" style="position:relative; top: 50px;">
+        <h1 style="color: white;font-size: 56px; font-weight: bold;">OUR MAIN FEATURES</h1>
+        <div class="card-columns text-center col-lg-10" style="margin-top: 4rem;">
+          <div class="card card-row card_o">
+            <i class="fas fa-chart-line fa-7x" style="color: white;"></i>
+            <h1 style="font-weight: bold;color: white;">Invest</h1>
+            <h5 class="title_card_down margin" style="color: white;">Let your Crypto work hard for you!</h5>
+            <p class="margin">Lipzer holders can stake the tokens into the Staking Pools to receive rewards and transaction fees. Staking indirectly serves to support the system.</p>
+            <p><a href="#">Learn More</a></p>
+          </div>
+          <div class="card card-row card_o">
+            <i class="fas fa-chart-line fa-7x" style="color: white;"></i>
+            <h1 style="font-weight: bold;color: white;" >Invest</h1>
+            <h5 class="title_card_down margin" style="color: white;">Easy & Fast on-chain API creation!</h5>
+            <p class="margin">Lipzer Exchange protocol is a staple of the DeFi infrastructure, an original financial permissionless development platform, offering a flexible and versatile vAMM, providing developers with great flexibility and customizability.</p>
+            <p><a href="#">Learn More</a></p>
+          </div>
+          <div class="card card-row card_o">
+            <i class="fas fa-chart-line fa-7x" style="color: white;"></i>
+            <h1 style="font-weight: bold;color: white;">Invest</h1>
+            <h5 class="title_card_down margin" style="color: white;">Take your trading to the next level!</h5>
+            <p class="margin">Trade on-chain derivatives with High Leverage, Low Fees, Low Slippage and Gas Costs. Lipzer Exchange enables efficient trading at the best available price. Easily exchange ERC-20 tokens permissionless.</p>
+            <p><a href="#">Learn More</a></p>
+          </div>
+        </div>
+      </div>
+    <div class="custom-shape-divider-top-1643659964" style="position: relative; top: 64px; width: 102%; left: -26px;background: #010e24;">
+      <svg style="height: 174px;" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+      </svg>
+    </div>
+        <!-- /.row -->
+        <!-- END CUSTOM TABS -->
+
+        
+      </div><!-- /.container-fluid -->
+    </div>
+    </section>
+    <!-- /.content -->
+    <div style="padding: 75px; background-color: #010e24;">
+      <div class="container">
+        <div class="row justify-content-lg-around columnsfooter justify-content-md-around">
+          <img class="h-100 logo logofooter" src="img/logo.png">
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              Pages
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="nft.html">
+                Home
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="nft.html">
+                NFT
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="swap.html">
+                Swap
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="marketplace.html">
+                Marketplace
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="invite.html">
+                Friends
+              </a>
+            </li>
+          </ul>
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              About Us
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                Documentation
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                LIP Token
+              </a>
+            </li>
+          </ul>
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              Help
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                Contact Us
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                Guides
+              </a>
+            </li>
+          </ul>
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              Products
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li>
+              <a class="menufooter mouse" href="#">
+                Trading
+              </a>
+            </li>
+            <li>
+              <a class="menufooter mouse" href="#">
+                NFT
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="row justify-content-around" style="position: relative;
+        top: 30px;">
+          <a style="color: white" href="#">
+            <i class="fab fa-github fa-lg mouse"></i>
+          </a>
+          <a style="color: white" href="#">
+            <i class="fab fa-facebook-f fa-lg mouse"></i>
+          </a>
+          <a style="color: white" href="#">
+            <i class="fab fa-whatsapp fa-lg mouse"></i>
+          </a>
+          <a style="color: white" href="#">
+            <i class="fab fa-twitter fa-lg mouse"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/inputmask/jquery.inputmask.min.js"></script>
+<!-- date-range-picker -->
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- BS-Stepper -->
+<script src="plugins/bs-stepper/js/bs-stepper.min.js"></script>
+<!-- dropzonejs -->
+<script src="plugins/dropzone/min/dropzone.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!--Apontamento Main.js-->
+<script src="main.js"></script>
+
+</body>
+</html>

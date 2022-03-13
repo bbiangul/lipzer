@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lipzer Exchange</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+ <!-- Google Font: Source Sans Pro -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+ <!-- iCheck for checkboxes and radio inputs -->
+ <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+ <!-- Bootstrap Color Picker -->
+ <link rel="stylesheet" href="plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+ <!-- Tempusdominus Bootstrap 4 -->
+ <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+ <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+ <!-- Bootstrap4 Duallistbox -->
+ <link rel="stylesheet" href="plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+ <!-- Theme style -->
+ <link rel="stylesheet" href="dist/css/adminlte.min.css">
+ <!-- Style CSS -->
+ <link rel="stylesheet" href="style.css">
+ <!--style do TimeVencimentoNFT-->
+ <link rel="stylesheet" href="TimeVenc.NFT/style/stylecontador.css">
+
+
+  <style>
+/*BACKGROUND CONFIGURATION*/
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 280px) { 
+  .background{
+      background-image: url('img/bgnft.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  .card-columns {
+  column-count: 1;
+  }
+  .title_flex{
+    flex-direction: column;
+  }
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+  .background{
+    background-image: url('img/bgnft.jpg');
+    background-repeat: no-repeat;
+    padding: 3em;
+    background-size: cover;
+  } 
+  .card-columns {
+    column-count: 2;
+  }
+  .title_flex{
+    flex-direction: unset;
+  }
+}
+
+/*//Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+  .background{
+      background-image: url('img/imgback992.png');
+      background-repeat: no-repeat;
+      padding: 3em;
+      background-size: cover;
+  } 
+  .card-columns {
+    column-count: 2;
+  }
+  .title_flex{
+    flex-direction: unset;
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+  .background{
+    background-image: url('img/imgback992.png');
+    background-repeat: no-repeat;
+    padding: 3em;
+    background-size: cover;
+  } 
+  .card-columns {
+    column-count: 3;
+  }
+  .title_flex{
+    flex-direction: unset;
+  }
+}
+
+
+/*Color of the buttons*/
+.btn-lip {
+  color: #fff;
+  background-color: #EF0048;
+  border-color: #EF0048;
+  box-shadow: none;
+}
+
+.btn-lip:hover {
+  color: #fff;
+  background-color: #b30036;
+  border-color: #b30036;
+}
+
+.btn-lip:focus, .btn-lip.focus {
+  color: #fff;
+  background-color: #b30036;
+  border-color: #b30036;
+  box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+}
+
+.btn-lip.disabled, .btn-lip:disabled {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-lip:not(:disabled):not(.disabled):active, .btn-lip:not(:disabled):not(.disabled).active,
+.show > .btn-lip.dropdown-toggle {
+  color: #fff;
+  background-color: #ff004d;
+  border-color: #ff004d;
+}
+
+.btn-lip:not(:disabled):not(.disabled):active:focus, .btn-lip:not(:disabled):not(.disabled).active:focus,
+.show > .btn-lip.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0 #ff004d;
+}
+/*SECOND CASE*/
+.btn-option {
+  color: #fff;
+  background-color: transparent;
+  border-color: #EF0048;
+  box-shadow: none;
+}
+
+.btn-option:hover {
+  color: #fff;
+  background-color: #EF0048;
+  border-color: #EF0048;
+}
+
+.btn-option:focus, .btn-option.focus {
+  color: #fff;
+  background-color: #EF0048;
+  border-color: #EF0048;
+  box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+}
+
+.btn-option.disabled, .btn-option:disabled {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-option:not(:disabled):not(.disabled):active, .btn-option:not(:disabled):not(.disabled).active,
+.show > .btn-option.dropdown-toggle {
+  color: #fff;
+  background-color: #EF0048;
+  border-color: #EF0048;
+}
+
+.btn-option:not(:disabled):not(.disabled):active:focus, .btn-option:not(:disabled):not(.disabled).active:focus,
+.show > .btn-option.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0 #ff004d;
+}
+/*FIM DA COR DOS BTN*/
+
+/*COLORS ON NAVBAR*/
+
+.navbarcolor{
+  background-color: #EF0048;
+}
+.logo{
+  border: transparent;
+  border-radius: 20px;
+}
+/* FINISH COLOR ON NAVBAR */
+
+/*ANIMATION IMG*/
+.object2 {
+  animation: MoveUpDown 25.5s cubic-bezier(0.42, 0, 0.23, 1.01) infinite;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 5000px;
+  }
+}
+/*FINISH ANIMATION IMG*/
+
+/*LIST GROUP*/
+.list-group-itens {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-left: 0;
+  border-radius: 0;
+  border-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/*FINISH LIST GROUP*/
+
+/*CSS DO FOOTER*/
+.menufooter{
+  color: #838383;
+}
+.titulosfooter{
+  color: #ff0048;
+  font-size: x-large;
+  font-weight: bold;
+}
+.mouse:hover{
+  cursor: pointer;
+  position:relative;
+  right: -1px;
+  top: -1px;
+  color: #838383;
+}
+/*END CSS DO FOOTER*/
+
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbarcolor navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <img class="logo col-5 col-lg-auto col-md-auto mr-auto" src="img/logo.png">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="home.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a  href="nft.html" class="nav-link">NFT</a>
+        </li>
+        <li class="nav-item">
+          <a  href="swap.html" class="nav-link">Swap</a>
+        </li>
+        <li class="nav-item active">
+          <a  href="marketplace.html" class="nav-link">NFT Marketplace</a>
+        </li>
+        <li class="nav-item">
+          <a  href="invite.html" class="nav-link">Friends</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="navbar-nav ml-auto n5">
+      <li class="nav-item">
+        <button type="button" class="btn btn-light block" style="color: #EF0048; border: transparent; border-radius: 20px;">Connect to Wallet</button>
+      </li>
+    </ul>
+  </nav>
+  <!-- BACKGROUND -->
+  <div style="background-image: url('img/bg1.jpg');">
+    <br>
+
+    <!-- Main content -->
+    <img src="img/saturn.png" style="position: absolute; width: 50%; opacity: 10%; right: 10px; top: 200px;">
+    <img src="img/justarocket.png" class="object2" style="width: 20%;">
+    <div class="col-9 container-fluid" style="margin-top: 30px;">
+      <div class="container d-flex title_flex justify-content-lg-between">
+        <h1 class="float-left" style="color: white;">Marketplace</h1>
+        <div></div>
+        <div class="row justify-content-end">
+          <div class="btn-group mx-n5 mx-lg-1" role="group" aria-label="Option">
+            <button style="width: 150px; border-radius: 20px;" type="button" class="btn btn-lip m-1">Create NFT</button>
+            <button style="width: 150px; border-radius: 20px" type="button" class="btn btn-lip m-1">Sell NFT</button>
+          </div>
+          <button style="width: 200px; border-radius: 20px;" type="button" class="btn btn-success">Marketplace History</button>
+        </div>
+      </div>
+      <br>
+      <div class="container d-flex flex-column flex-lg-row-reverse justify-content-lg-between">
+        <div class="row">
+          <div class="btn-group" role="group">
+              <button style="width: 150px; border-radius: 20px; border: none; background-color: #323232;" id="btnGroupDrop1" type="button" class="btn btn-lip m-1 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">teste</button>
+              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <li><button class="dropdown-item" type="button">teste</button></li>
+                <li><button class="dropdown-item" type="button">teste action</button></li>
+                <li><button class="dropdown-item" type="button">Something else here</button></li>
+              </ul>
+          </div>
+          <div class="btn-group mr-auto" role="group">
+              <button style="width: 150px; border-radius: 20px; border: none; background-color: #323232;" id="btnGroupDrop2" type="button" class="btn btn-lip m-1 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">teste</button>
+              <ul class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                <li><button class="dropdown-item" type="button">2</button></li>
+                <li><button class="dropdown-item" type="button">3</button></li>
+                <li><button class="dropdown-item" type="button">Something else here</button></li>
+              </ul>
+          </div>
+          <div class="">
+            <div class="form-outline">
+              <input class="form-control" style="border-radius: 20px; position: relative; top: 2px; background: none; border: 1px solid #323232;" id="search-input" type="search" id="form1" placeholder="Search" />
+            </div>
+          </div>
+        </div>
+        <div class="btn-group mx-n5 mx-lg-1" role="group" aria-label="Option">
+          <button style="width: 100px; border-radius: 20px;" type="button" class="btn btn-option m-1">Call</button>
+          <button style="width: 100px; border-radius: 20px" type="button " class="btn btn-option m-1">Put</button>
+        </div>
+      </div>
+      <br>
+        <div class="card-columns m-lg-5">
+          <!-- Custom Tabs -->
+            <div class="container-fluid">
+              <!--Primeiro Card-->
+              <div class="border card card-row card-success" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                  <h3 class="card-title">
+                    CALL
+                  </h3>
+                </div>
+                    <div class="card-body elevation-5" style="border-radius: 20px;">
+                      <div class="text-center">
+                        <a href="detalhamento.html"><img class="mouse profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;"></a>
+                      </div>
+                      <h3 class="profile-username text-center" style="color: white;">BNB</h3>
+                      <p class="text-center" style="color: white;">Amount 0.002</p>
+                      <!--tempoVenci.NFT-->
+                      <div>
+                          <ul class = "col-12 d-flex justify-content-around stylecountdown text-center">
+                             <li>
+                               <span data-time></span>
+                                <div class="dtvnft">D</div>
+                             </li>
+                             <li>
+                                <span data-time></span>
+                                 <div class="dtvnft">H</div>
+                              </li>
+                              <li>
+                                 <span data-time></span>
+                                  <div class="dtvnft">M</div>
+                              </li>
+                              <li>
+                                  <span data-time></span>
+                                   <div class="dtvnft">S</div>
+                               </li>
+                           </ul>
+                       </div> 
+                    <div>
+                      <ul class="list-group list-group-unbordered mb-3">
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Quotation</b>
+                          <a class="float-right" style="color: white">$5.9944</a>
+                        </li>
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Time</b>
+                          <a class="float-right" style="color: white;">6 Months</a>
+                        </li>
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Prize Value</b>
+                          <a class="float-right" style="color: white;">$100</a>
+                        </li>
+                      </ul>
+                        <button type="button" class="btn btn-tool col-6">
+                          <b>CANCEL</b>
+                        </button>
+                        <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                          <b>SELL</b>
+                        </button>
+                    </div>
+                  </div>
+              </div>
+              <!--SEGUNDO CARD-->
+              <div class="border card card-row card-danger" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                  <h3 class="card-title">
+                    PUT
+                  </h3>
+                </div> 
+                  <div>
+                    <div class="card-body elevation-5" style="border-radius: 20px;">
+                      <div class="text-center">
+                        <img class="profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;">
+                      </div>
+                      <h3 class="profile-username text-center" style="color: white;">BNB</h3>
+                      <p class="text-center" style="color: white;">Amount 0.002</p>
+                      <!--tempoVenci.NFT-->
+                <div>
+                  <ul class= "col-12 d-flex justify-content-around stylecountdown text-center">
+                   <li>
+                       <span data-time2></span>
+                       <div class="dtvnft">D</div>
+                   </li>
+                   <li>
+                       <span data-time2></span>
+                       <div class="dtvnft">H</div>
+                   </li>
+                   <li>
+                       <span data-time2></span>
+                       <div class="dtvnft">M</div>
+                   </li>
+                   <li>
+                       <span data-time2></span>
+                       <div class="dtvnft">S</div>
+                   </li>
+                  </ul>
+                </div>
+                      <ul class="list-group list-group-unbordered mb-3">
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Quotation</b>
+                          <a class="float-right" style="color: white">$5.9944</a>
+                        </li>
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Time</b>
+                          <a class="float-right" style="color: white;">6 Months</a>
+                        </li>
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Prize Value</b>
+                          <a class="float-right" style="color: white;">$100</a>
+                        </li>
+                      </ul>
+                      <button type="button" class="btn btn-tool col-6">
+                        <b>CANCEL</b>
+                      </button>
+                      <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                        <b>SELL</b>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+              <!--TERCEIRO CARD-->
+              <div class="border card card-row card-success" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                  <h3 class="card-title">
+                    CALL
+                  </h3>
+                </div>
+                  <div>
+                    <div class="card-body elevation-5" style="border-radius: 20px;">
+                      <div class="text-center">
+                        <img class="profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;">
+                      </div>
+                      <h3 class="profile-username text-center" style="color: white;">BNB</h3>
+                      <p class="text-center" style="color: white;">Amount 0.002</p>
+                      <!--tempoVenci.NFT-->
+                <div>
+                  <ul  class = "col-12 d-flex justify-content-around stylecountdown text-center">
+                   <li>
+                       <span data-time3></span>
+                       <div class="dtvnft">D</div>
+                   </li>
+                   <li>
+                       <span data-time3></span>
+                       <div class="dtvnft">H</div>
+                   </li>
+                   <li>
+                       <span data-time3></span>
+                       <div class="dtvnft">M</div>
+                   </li>
+                   <li>
+                       <span data-time3></span>
+                       <div class="dtvnft">S</div>
+                   </li>
+                  </ul>
+                </div>
+                      <ul class="list-group list-group-unbordered mb-3">
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Quotation</b>
+                          <a class="float-right" style="color: white">$5.9944</a>
+                        </li>
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Time</b>
+                          <a class="float-right" style="color: white;">6 Months</a>
+                        </li>
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Prize Value</b>
+                          <a class="float-right" style="color: white;">$100</a>
+                        </li>
+                      </ul>
+                      <button type="button" class="btn btn-tool col-6">
+                        <b>CANCEL</b>
+                      </button>
+                      <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                        <b>SELL</b>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+              <!--QUARTO CARD-->
+              <div class="border card card-row card-success" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                  <h3 class="card-title">
+                    CALL
+                  </h3>
+                </div> 
+                  <div>
+                    <div class="card-body elevation-5" style="border-radius: 20px;">
+                      <div class="text-center">
+                        <img class="profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;">
+                      </div>
+                      <h3 class="profile-username text-center" style="color: white;">BNB</h3>
+                      <p class="text-center" style="color: white;">Amount 0.002</p>
+                      <!--tempoVenci.NFT-->
+                <div>
+                  <ul class= "col-12 d-flex justify-content-around stylecountdown text-center">
+                   <li>
+                       <span data-time4></span>
+                       <div class="dtvnft">D</div>
+                   </li>
+                   <li>
+                       <span data-time4></span>
+                       <div class="dtvnft">H</div>
+                   </li>
+                   <li>
+                       <span data-time4></span>
+                       <div class="dtvnft">M</div>
+                   </li>
+                   <li>
+                       <span data-time4></span>
+                       <div class="dtvnft">S</div>
+                   </li>
+                  </ul>
+                </div>
+                      <ul class="list-group list-group-unbordered mb-3">
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Quotation</b>
+                          <a class="float-right" style="color: white">$5.9944</a>
+                        </li>
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Time</b>
+                          <a class="float-right" style="color: white;">6 Months</a>
+                        </li>
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Prize Value</b>
+                          <a class="float-right" style="color: white;">$100</a>
+                        </li>
+                      </ul>
+                      <button type="button" class="btn btn-tool col-6">
+                        <b>CANCEL</b>
+                      </button>
+                      <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                        <b>SELL</b>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+              <!--QUINTO CARD-->
+              <div class="border card card-row card-danger" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                  <h3 class="card-title">
+                    PUT
+                  </h3>
+                </div>
+                  <div>
+                    <div class="card-body elevation-5" style="border-radius: 20px;">
+                      <div class="text-center">
+                        <img class="profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;">
+                      </div>
+                      <h3 class="profile-username text-center" style="color: white;">BNB</h3>
+                      <p class="text-center" style="color: white;">Amount 0.002</p>
+                      <!--tempoVenci.NFT-->
+                        <div>
+                           <ul class= "col-12 d-flex justify-content-around stylecountdown text-center">
+                             <li>
+                                <span data-time5></span>
+                                <div class="dtvnft">D</div>
+                              </li>
+                              <li>
+                                 <span data-time5></span>
+                                 <div class="dtvnft">H</div>
+                               </li>
+                                <li>
+                                 <span data-time5></span>
+                                 <div class="dtvnft">M</div>
+                               </li>
+                                <li>
+                                  <span data-time5></span>
+                                  <div class="dtvnft">S</div>
+                               </li>
+                            </ul>
+                         </div> 
+                      <ul class="list-group list-group-unbordered mb-3">
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Quotation</b>
+                          <a class="float-right" style="color: white">$5.9944</a>
+                        </li>
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Time</b>
+                          <a class="float-right" style="color: white;">6 Months</a>
+                        </li>
+                        <li class="list-group-itens" style="color: white; background: none;">
+                          <b>Prize Value</b>
+                          <a class="float-right" style="color: white;">$100</a>
+                        </li>
+                      </ul>
+                      <button type="button" class="btn btn-tool col-6">
+                        <b>CANCEL</b>
+                      </button>
+                      <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                        <b>SELL</b>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+              <!--FIM DO QUINTO CARD-->
+            </div>
+        </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+    <!-- /.content -->
+    <div style="padding: 75px; background-color: #010e24;">
+      <div class="container">
+        <div class="row justify-content-lg-around columnsfooter justify-content-md-around">
+          <img class="h-100 logo logofooter" src="img/logo.png">
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              Pages
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                Home
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="nft.html">
+                NFT
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="swap.html">
+                Swap
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="marketplace.html">
+                Marketplace
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="invite.html">
+                Friends
+              </a>
+            </li>
+          </ul>
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              About Us
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                Documentation
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                LIP Token
+              </a>
+            </li>
+          </ul>
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              Help
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                Contact Us
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                Guides
+              </a>
+            </li>
+          </ul>
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              Products
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li>
+              <a class="menufooter mouse" href="#">
+                Trading
+              </a>
+            </li>
+            <li>
+              <a class="menufooter mouse" href="#">
+                NFT
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="row justify-content-around" style="position: relative;
+        top: 30px;">
+          <a style="color: white" href="#">
+            <i class="fab fa-github fa-lg mouse"></i>
+          </a>
+          <a style="color: white" href="#">
+            <i class="fab fa-facebook-f fa-lg mouse"></i>
+          </a>
+          <a style="color: white" href="#">
+            <i class="fab fa-whatsapp fa-lg mouse"></i>
+          </a>
+          <a style="color: white" href="#">
+            <i class="fab fa-twitter fa-lg mouse"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- bootstrap color picker -->
+<script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- BS-Stepper -->
+<script src="plugins/bs-stepper/js/bs-stepper.min.js"></script>
+<!-- dropzonejs -->
+<script src="plugins/dropzone/min/dropzone.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!--Apontamento Main.js-->
+<script src="main.js"></script>
+<!--ScriptTempoVenc.NFT-->
+<script type="module" src="TimeVenc.NFT/scriptcard1.js"></script>
+<script type="module" src="TimeVenc.NFT/scriptcard2.js"></script>
+<script type="module" src="TimeVenc.NFT/scriptcard3.js"></script>
+<script type="module" src="TimeVenc.NFT/scriptcard4.js"></script>
+<script type="module" src="TimeVenc.NFT/scriptcard5.js"></script>
+
+</body>
+</html>

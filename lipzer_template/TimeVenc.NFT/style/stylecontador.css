@@ -1,0 +1,26 @@
+
+li {
+  list-style: none;
+}
+
+.stylecountdown {
+  height: 40px;
+  display: inline-block;
+}
+
+.stylecountdown li {
+  display: inline-block;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold; 
+  color: rgb(244, 249, 252);
+  text-align: center;
+}
+
+.stylecountdown li span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 1em;
+}
+.dtvnft{
+  color: #EF0048;
+}

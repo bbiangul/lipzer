@@ -1,0 +1,1712 @@
+<html lang="en" style="height: auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lipzer Exchange</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css" />
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link
+      rel="stylesheet"
+      href="plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+    />
+    <!-- Bootstrap Color Picker -->
+    <link
+      rel="stylesheet"
+      href="plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css"
+    />
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link
+      rel="stylesheet"
+      href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
+    />
+    <!-- Select2 -->
+    <link rel="stylesheet" href="plugins/select2/css/select2.min.css" />
+    <link
+      rel="stylesheet"
+      href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"
+    />
+    <!-- Bootstrap4 Duallistbox -->
+    <link
+      rel="stylesheet"
+      href="plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css"
+    />
+    <!-- BS Stepper -->
+    <link rel="stylesheet" href="plugins/bs-stepper/css/bs-stepper.min.css" />
+    <!-- dropzonejs -->
+    <link rel="stylesheet" href="plugins/dropzone/min/dropzone.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!--style do TimeVencimentoNFT-->
+    <link rel="stylesheet" href="TimeVenc.NFT/style/stylecontador.css" />
+
+    <style>
+      .color-palette {
+        height: 35px;
+        line-height: 35px;
+        text-align: right;
+        padding-right: 0.75rem;
+      }
+
+      .color-palette.disabled {
+        text-align: center;
+        padding-right: 0;
+        display: block;
+      }
+
+      .color-palette-set {
+        margin-bottom: 15px;
+      }
+
+      .color-palette span {
+        display: none;
+        font-size: 12px;
+      }
+
+      .color-palette:hover span {
+        display: block;
+      }
+
+      .color-palette.disabled span {
+        display: block;
+        text-align: left;
+        padding-left: 0.75rem;
+      }
+
+      .color-palette-box h4 {
+        position: absolute;
+        left: 1.25rem;
+        margin-top: 0.75rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 12px;
+        display: block;
+        z-index: 7;
+      }
+      /*CSS PARA IMGS CALL AND PUT*/
+      .cc-selector input {
+        margin: 0;
+        padding: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+
+      .call {
+        background-image: url(img/call.png);
+        border-radius: 5px;
+      }
+
+      .put {
+        background-image: url(img/put.png);
+        border-radius: 5px;
+      }
+
+      .bnb {
+        background-image: url(img/bnb.png);
+        border-radius: 5px;
+      }
+
+      .cc-selector input:active + .drinkcard-cc {
+        opacity: 0.9;
+      }
+      .cc-selector input:checked + .drinkcard-cc {
+        -webkit-filter: none;
+        -moz-filter: none;
+        filter: none;
+      }
+      .drinkcard-cc {
+        cursor: pointer;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 60px;
+        height: 25px;
+        -webkit-transition: all 100ms ease-in;
+        -moz-transition: all 100ms ease-in;
+        transition: all 100ms ease-in;
+        -webkit-filter: brightness(0.8) grayscale(0.6) opacity(0.9);
+        -moz-filter: brightness(0.8) grayscale(0.6) opacity(0.9);
+        filter: brightness(0.8) grayscale(0.6) opacity(0.9);
+      }
+      .drinkcard-cc:hover {
+        -webkit-filter: brightness(0.1) grayscale(0.2) opacity(0.7);
+        -moz-filter: brightness(0.1) grayscale(0.2) opacity(0.7);
+        filter: brightness(0.1) grayscale(0.2) opacity(0.7);
+      }
+
+      /* Extras */
+      a:visited {
+        color: #888;
+      }
+      a {
+        color: #444;
+        text-decoration: none;
+      }
+      p {
+        margin-bottom: 0.3em;
+      }
+
+      /*FINISH CSS CALL AND PUT*/
+      /*BACKGROUND CONFIGURATION*/
+
+      /*Small devices (landscape phones, 576px and up)*/
+      @media (min-width: 280px) {
+        .background {
+          background-image: url("img/bgnft.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .card-columns {
+          column-count: 1;
+        }
+        .title_flex {
+          flex-direction: column;
+        }
+      }
+
+      /*// Medium devices (tablets, 768px and up)*/
+      @media (min-width: 768px) {
+        .background {
+          background-image: url("img/bgnft.jpg");
+          background-repeat: no-repeat;
+          padding: 3em;
+          background-size: cover;
+        }
+        .card-columns {
+          column-count: 2;
+        }
+        .title_flex {
+          flex-direction: unset;
+        }
+      }
+
+      /*//Large devices (desktops, 992px and up)*/
+      @media (min-width: 992px) {
+        .background {
+          background-image: url("img/imgback992.png");
+          background-repeat: no-repeat;
+          padding: 3em;
+          background-size: cover;
+        }
+        .card-columns {
+          column-count: 2;
+        }
+        .title_flex {
+          flex-direction: unset;
+        }
+      }
+
+      /*Extra large devices (large desktops, 1200px and up)*/
+      @media (min-width: 1200px) {
+        .background {
+          background-image: url("img/imgback992.png");
+          background-repeat: no-repeat;
+          padding: 3em;
+          background-size: cover;
+        }
+        .card-columns {
+          column-count: 3;
+        }
+        .title_flex {
+          flex-direction: unset;
+        }
+      }
+
+      /*Color of the buttons*/
+      .btn-lip {
+        color: #fff;
+        background-color: #ef0048;
+        border-color: #ef0048;
+        box-shadow: none;
+      }
+
+      .btn-lip:hover {
+        color: #fff;
+        background-color: #b30036;
+        border-color: #b30036;
+      }
+
+      .btn-lip:focus,
+      .btn-lip.focus {
+        color: #fff;
+        background-color: #b30036;
+        border-color: #b30036;
+        box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+      }
+
+      .btn-lip.disabled,
+      .btn-lip:disabled {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      .btn-lip:not(:disabled):not(.disabled):active,
+      .btn-lip:not(:disabled):not(.disabled).active,
+      .show > .btn-lip.dropdown-toggle {
+        color: #fff;
+        background-color: #ff004d;
+        border-color: #ff004d;
+      }
+
+      .btn-lip:not(:disabled):not(.disabled):active:focus,
+      .btn-lip:not(:disabled):not(.disabled).active:focus,
+      .show > .btn-lip.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0 #ff004d;
+      }
+      /*SECOND CASE*/
+      .btn-option {
+        color: #fff;
+        background-color: transparent;
+        border-color: #ef0048;
+        box-shadow: none;
+      }
+
+      .btn-option:hover {
+        color: #fff;
+        background-color: #ef0048;
+        border-color: #ef0048;
+      }
+
+      .btn-option:focus,
+      .btn-option.focus {
+        color: #fff;
+        background-color: #ef0048;
+        border-color: #ef0048;
+        box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+      }
+
+      .btn-option.disabled,
+      .btn-option:disabled {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      .btn-option:not(:disabled):not(.disabled):active,
+      .btn-option:not(:disabled):not(.disabled).active,
+      .show > .btn-option.dropdown-toggle {
+        color: #fff;
+        background-color: #ef0048;
+        border-color: #ef0048;
+      }
+
+      .btn-option:not(:disabled):not(.disabled):active:focus,
+      .btn-option:not(:disabled):not(.disabled).active:focus,
+      .show > .btn-option.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0 #ff004d;
+      }
+      /*FIM DA COR DOS BTN*/
+
+      /*COR DA BARRA RANGE*/
+      .stylerange {
+        -webkit-appearance: none;
+        background: #ef0048;
+        outline: none;
+        width: 100%;
+        height: 3px;
+        border-radius: 9px;
+      }
+      .stylerange::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+
+        background: #b30036;
+        cursor: pointer;
+      }
+
+      .stylerange::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+
+        background: #ef0048;
+        cursor: pointer;
+      }
+      /*FINISH COLOR RANGE*/
+
+      /*COLORS ON NAVBAR*/
+
+      .navbarcolor {
+        background-color: #ef0048;
+      }
+      .logo {
+        border: transparent;
+        border-radius: 20px;
+      }
+      /* FINISH COLOR ON NAVBAR */
+
+      /*ANIMATION IMG*/
+      .object {
+        animation: MoveUpDown 4.5s linear infinite;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      @keyframes MoveUpDown {
+        0%,
+        100% {
+          bottom: 0;
+        }
+        50% {
+          bottom: 30px;
+        }
+      }
+      .object2 {
+        animation: MoveUpDown 15.5s linear infinite;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      @keyframes MoveUpDown {
+        0%,
+        100% {
+          bottom: 0;
+        }
+        50% {
+          bottom: 1200px;
+        }
+      }
+      /*FINISH ANIMATION IMG*/
+
+      /*LIST GROUP*/
+      .list-group-itens {
+        position: relative;
+        display: block;
+        padding: 0.75rem 1.25rem;
+        background-color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        border-left: 0;
+        border-radius: 0;
+        border-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      /*FINISH LIST GROUP*/
+
+      /*CSS DO FOOTER*/
+      .menufooter {
+        color: white;
+      }
+      /*END CSS DO FOOTER*/
+
+      .input_design {
+        background: none;
+        border: 1px solid #dee2e6;
+        border-radius: 20px;
+        position: relative;
+        top: 8px;
+        right: 20px;
+        text-align: center;
+        width: 12%;
+      }
+      .status {
+        border: transparent;
+        border-radius: 20px;
+        background-color: #ef0048;
+        width: 7em;
+        height: 2em;
+        text-align: center;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body style="height: auto">
+    <div class="min-vw-100">
+      <!-- Navbar -->
+      <nav
+        class="col-12 min-vw-100 navbar navbar-dark navbar-expand-lg navbarcolor px-lg-5"
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <img
+          class="logo col-5 col-lg-auto col-md-auto mr-auto"
+          src="img/logo.png"
+        />
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <!-- Left navbar links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="nft.html" class="nav-link">NFT</a>
+            </li>
+            <li class="nav-item">
+              <a href="swap.html" class="nav-link">Swap</a>
+            </li>
+            <li class="nav-item active">
+              <a href="marketplace.html" class="nav-link active">NFT Marketplace</a>
+            </li>
+            <li class="nav-item">
+              <a  href="invite.html" class="nav-link">Friends</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-nav ml-auto n5">
+          <li class="nav-item">
+            <button
+              type="button"
+              class="btn btn-light block"
+              style="color: #ef0048; border: transparent; border-radius: 20px"
+            >
+              Connect to Wallet
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <!-- BACKGROUND -->
+      <div
+        class="m-auto min-vw-100 mt-auto mt-lg-auto mt-md-auto mt-sm-auto mt-xl-auto mx-xl-auto row"
+        style="
+          margin-top: 30px;
+          background-image: linear-gradient(1deg, #02183c, #010e24);
+        "
+      >
+        <!-- Main content -->
+
+        <div
+          class="col-12 col-sm-12 pb-5 pt-5"
+          style="
+            margin-top: 9em; /* background-image: linear-gradient(1deg,#02183c, #010e24); */
+          "
+        >
+          <div
+            class="border-transparent col-12 d-flex d-inline d-inline-flex mb-5 mb-lg-5 mb-md-5 mb-sm-5 mb-xl-5 row"
+          >
+            <!-- Custom Tabs -->
+            <div
+              class="col-12 col-lg-3 col-md-6 col-sm-5 col-xl-2 m-auto mr-lg-5"
+            >
+              <!--Primeiro Card-->
+              <div
+                class="border card card-row card-success m-auto"
+                style="
+                  height: 83%;
+                  border-radius: 20px;
+                  background-color: transparent;
+                "
+              >
+                <div
+                  class="border-transparent card-header"
+                  style="border-radius: 20px 20px 0px 0px"
+                >
+                  <h3 class="card-title">CALL</h3>
+                </div>
+                <div class="card-body elevation-5" style="border-radius: 20px">
+                  <div class="text-center">
+                    <img
+                      class="profile-user-img img-circle elevation-5"
+                      src="img/bnb.png"
+                      style="width: 30%"
+                    />
+                  </div>
+                  <h3 class="profile-username text-center" style="color: white">
+                    BNB
+                  </h3>
+                  <p class="text-center" style="color: white">Amount 0.002</p>
+                  <ul class="list-group list-group-unbordered mb-3">
+                    <li
+                      class="list-group-itens"
+                      style="color: white; background: none"
+                    >
+                      <b>Quotation</b>
+                      <a class="float-right" style="color: white">$5.9944</a>
+                    </li>
+                    <li
+                      class="list-group-itens"
+                      style="color: white; background: none"
+                    >
+                      <b>Time</b>
+                      <a class="float-right" style="color: white">6 Months</a>
+                    </li>
+                    <li
+                      class="list-group-itens"
+                      style="color: white; background: none"
+                    >
+                      <b>Prize Value</b>
+                      <a class="float-right" style="color: white">$100</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--SEGUNDO CARD-->
+            <div
+              class="col-12 col-lg-4 col-md-6 col-sm-4 col-sm-7 col-xl-2 m-auto ml-lg-n5 row"
+              style="border-radius: 20px; /* margin-left: 20em; */"
+            >
+              <div
+                class="border-transparent card-header col-12"
+                style="border-radius: 20px 20px 0px 0px"
+              >
+                <h3
+                  class="card-title col-3"
+                  style="color: #fff; font-size: 30px"
+                >
+                  #Detalhamento
+                </h3>
+              </div>
+              <div>
+                <p class="status">status:</p>
+              </div>
+              <div class="">
+                <div class="" style="border-radius: 20px">
+                  <p class="text-left" style="color: white; padding: 5px">
+                    Ends in:
+                  </p>
+
+                  <!--tempoVenci.NFT-->
+                  <div>
+                    <ul
+                      class="col-12 d-flex justify-content-around stylecountdown text-center"
+                    >
+                      <li>
+                        <span data-time2="">0-1</span>
+                        <div class="dtvnft">D</div>
+                      </li>
+                      <li>
+                        <span data-time2="">0-4</span>
+                        <div class="dtvnft">H</div>
+                      </li>
+                      <li>
+                        <span data-time2="">0-58</span>
+                        <div class="dtvnft">M</div>
+                      </li>
+                      <li>
+                        <span data-time2="">0-46</span>
+                        <div class="dtvnft">S</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <ul class="list-group list-group-unbordered mb-3">
+                    <li
+                      class="list-group-itens"
+                      style="color: white; background: none"
+                    >
+                      <p>Start Price</p>
+                      <!--preço inicial-->
+                      <div>
+                        <!--preço-->
+                        <p>
+                          1.20000
+                          <span><strong>BNB</strong></span>
+                        </p>
+                        <!--valor convertido em dinheiro-->
+                        <p>=$650,00</p>
+                      </div>
+                      <button
+                        style="background-color: transparent; margin: none"
+                        class="main-header mt-lg-n5"
+                      >
+                        <img src="img/refresh1.png" alt="" />
+                      </button>
+                    </li>
+                  </ul>
+                  <li class="mr-1 pt-5">
+                    <button
+                      style="width: 150px; border-radius: 20px"
+                      type="button"
+                      class="btn-lip col-12 ml-5 w-75"
+                    >
+                      <b class="text-lg-center">Unlock Wallet</b>
+                    </button>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-12 col-lg-4 col-xl-3 m-auto ml-lg-5"
+              style="
+                /* height: 83%; */
+                border-radius: 20px;
+                background-color: transparent;
+              "
+            >
+              <div
+                class="card-body elevation-5 ml-5 ml-sm-0 pb-0"
+                style="border-radius: 20px"
+              >
+                <div class="text-center"></div>
+                <h3
+                  class="modal-dialog-scrollable pb-3 profile-username text-center"
+                  style="color: white"
+                >
+                  On-Chain Data
+                </h3>
+
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li
+                    class="list-group-itens"
+                    style="color: white; background: none"
+                  >
+                    <b>Owner Address</b>
+                    <a class="float-right" style="color: white">
+                      0x8a903...8E3FEF4</a
+                    >
+                  </li>
+                  <li
+                    class="list-group-itens"
+                    style="color: white; background: none"
+                  >
+                    <b>Contract Address</b>
+                    <a class="float-right" style="color: white"
+                      >0xecA16...E296489</a
+                    >
+                  </li>
+                  <li
+                    class="list-group-itens"
+                    style="color: white; background: none"
+                  >
+                    <b>Par Value</b>
+                    <a class="float-right" style="color: white"
+                      >459.983547 POSI</a
+                    >
+                  </li>
+                  <li
+                    class="list-group-itens"
+                    style="color: white; background: none"
+                  >
+                    <b>Mining Power</b>
+                    <a class="float-right" style="color: white"
+                      >658.006464 POSI</a
+                    >
+                  </li>
+                  <li
+                    class="list-group-itens"
+                    style="color: white; background: none"
+                  >
+                    <b>Mining Efficiency</b>
+                    <a class="float-right" style="color: white">143.05%</a>
+                  </li>
+                  <li
+                    class="list-group-itens"
+                    style="color: white; background: none"
+                  >
+                    <b>Decompose status</b>
+                    <a class="float-right" style="color: white">Locked</a>
+                  </li>
+                  <li
+                    class="list-group-itens"
+                    style="color: white; background: none"
+                  >
+                    <b>Decomposable in</b>
+                    <ul
+                      class="mailbox-attachment-close stylecountdown"
+                      style="
+                        margin-right: vh;
+                        /* margin-left: 19em; */
+                        /* text-align: left; */
+                        font-size: 1em;
+                      "
+                    >
+                      <li>
+                        <span data-time3="">0-1</span>
+                      </li>
+                      <li>
+                        <span data-time3="">0-7</span>
+                      </li>
+                      <li>
+                        <span data-time3="">0-58</span>
+                      </li>
+                      <li>
+                        <span data-time3="">0-46</span>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="/* padding: 70px; */ background-color: #010e24"
+        class="col-12 p-5 row-cols-1"
+      >
+        <div class="container">
+          <div
+            class="row justify-content-lg-around columnsfooter justify-content-md-around"
+          >
+            <img class="h-100 logo logofooter" src="img/logo.png" />
+            <ul class="list-inline">
+              <li class="titulosfooter">Pages</li>
+              <li
+                class="col-4"
+                style="
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  border-bottom: 4px solid #dee2e6;
+                "
+              ></li>
+              <li class="menufooter">
+                <a class="menufooter mouse" href="#"> Home </a>
+              </li>
+              <li class="menufooter">
+                <a class="menufooter mouse" href="nft.html"> NFT </a>
+              </li>
+              <li class="menufooter">
+                <a class="menufooter mouse" href="swap.html"> Swap </a>
+              </li>
+              <li class="menufooter">
+                <a class="menufooter mouse" href="marketplace.html">
+                  Marketplace
+                </a>
+              </li>
+              <li class="menufooter">
+                <a class="menufooter mouse" href="invite.html"> Friends </a>
+              </li>
+            </ul>
+            <ul class="list-inline">
+              <li class="titulosfooter">About Us</li>
+              <li
+                class="col-4"
+                style="
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  border-bottom: 4px solid #dee2e6;
+                "
+              ></li>
+              <li class="menufooter">
+                <a class="menufooter mouse" href="#"> Documentation </a>
+              </li>
+              <li class="menufooter">
+                <a class="menufooter mouse" href="#"> LIP Token </a>
+              </li>
+            </ul>
+            <ul class="list-inline">
+              <li class="titulosfooter">Help</li>
+              <li
+                class="col-4"
+                style="
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  border-bottom: 4px solid #dee2e6;
+                "
+              ></li>
+              <li class="menufooter">
+                <a class="menufooter mouse" href="#"> Contact Us </a>
+              </li>
+              <li class="menufooter">
+                <a class="menufooter mouse" href="#"> Guides </a>
+              </li>
+            </ul>
+            <ul class="list-inline">
+              <li class="titulosfooter">Products</li>
+              <li
+                class="col-4"
+                style="
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  border-bottom: 4px solid #dee2e6;
+                "
+              ></li>
+              <li>
+                <a class="menufooter mouse" href="#"> Trading </a>
+              </li>
+              <li>
+                <a class="menufooter mouse" href="#"> NFT </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="row justify-content-around"
+            style="position: relative; top: 30px"
+          >
+            <a style="color: white" href="#">
+              <i class="fab fa-github fa-lg mouse"></i>
+            </a>
+            <a style="color: white" href="#">
+              <i class="fab fa-facebook-f fa-lg mouse"></i>
+            </a>
+            <a style="color: white" href="#">
+              <i class="fab fa-whatsapp fa-lg mouse"></i>
+            </a>
+            <a style="color: white" href="#">
+              <i class="fab fa-twitter fa-lg mouse"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- /.content-wrapper -->
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      <!-- /.control-sidebar -->
+
+      <!-- ./wrapper -->
+
+      <!-- jQuery -->
+      <script src="plugins/jquery/jquery.min.js"></script>
+      <!-- Bootstrap 4 -->
+      <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Select2 -->
+      <script src="plugins/select2/js/select2.full.min.js"></script>
+      <!-- Bootstrap4 Duallistbox -->
+      <script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+      <!-- InputMask -->
+      <script src="plugins/moment/moment.min.js"></script>
+      <script src="plugins/inputmask/jquery.inputmask.min.js"></script>
+      <!-- date-range-picker -->
+      <script src="plugins/daterangepicker/daterangepicker.js"></script>
+      <!-- bootstrap color picker -->
+      <script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+      <!-- Tempusdominus Bootstrap 4 -->
+      <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+      <!-- Bootstrap Switch -->
+      <script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+      <!-- BS-Stepper -->
+      <script src="plugins/bs-stepper/js/bs-stepper.min.js"></script>
+      <!-- dropzonejs -->
+      <script src="plugins/dropzone/min/dropzone.min.js"></script>
+      <!-- AdminLTE App -->
+      <script src="dist/js/adminlte.min.js"></script>
+      <!-- AdminLTE for demo purposes -->
+      <script src="dist/js/demo.js"></script>
+      <!--Apontamento Main.js-->
+      <script src="main.js"></script>
+      <!--ScriptTempoVenc.NFT-->
+      <script type="module" src="TimeVenc.NFT/scriptcard1.js"></script>
+      <script type="module" src="TimeVenc.NFT/scriptcard2.js"></script>
+      <script type="module" src="TimeVenc.NFT/scriptcard3.js"></script>
+      <script type="module" src="TimeVenc.NFT/scriptcard4.js"></script>
+      <script type="module" src="TimeVenc.NFT/scriptcard5.js"></script>
+
+      <script>
+        $(function () {
+          //Initialize Select2 Elements
+          $(".select2").select2();
+
+          //Initialize Select2 Elements
+          $(".select2bs4").select2({
+            theme: "bootstrap4",
+          });
+
+          //Datemask dd/mm/yyyy
+          $("#datemask").inputmask("dd/mm/yyyy", { placeholder: "dd/mm/yyyy" });
+          //Datemask2 mm/dd/yyyy
+          $("#datemask2").inputmask("mm/dd/yyyy", {
+            placeholder: "mm/dd/yyyy",
+          });
+          //Money Euro
+          $("[data-mask]").inputmask();
+
+          //Date picker
+          $("#reservationdate").datetimepicker({
+            format: "L",
+          });
+
+          //Date and time picker
+          $("#reservationdatetime").datetimepicker({
+            icons: { time: "far fa-clock" },
+          });
+
+          //Date range picker
+          $("#reservation").daterangepicker();
+          //Date range picker with time picker
+          $("#reservationtime").daterangepicker({
+            timePicker: true,
+            timePickerIncrement: 30,
+            locale: {
+              format: "MM/DD/YYYY hh:mm A",
+            },
+          });
+          //Date range as a button
+          $("#daterange-btn").daterangepicker(
+            {
+              ranges: {
+                Today: [moment(), moment()],
+                Yesterday: [
+                  moment().subtract(1, "days"),
+                  moment().subtract(1, "days"),
+                ],
+                "Last 7 Days": [moment().subtract(6, "days"), moment()],
+                "Last 30 Days": [moment().subtract(29, "days"), moment()],
+                "This Month": [
+                  moment().startOf("month"),
+                  moment().endOf("month"),
+                ],
+                "Last Month": [
+                  moment().subtract(1, "month").startOf("month"),
+                  moment().subtract(1, "month").endOf("month"),
+                ],
+              },
+              startDate: moment().subtract(29, "days"),
+              endDate: moment(),
+            },
+            function (start, end) {
+              $("#reportrange span").html(
+                start.format("MMMM D, YYYY") +
+                  " - " +
+                  end.format("MMMM D, YYYY")
+              );
+            }
+          );
+
+          //Timepicker
+          $("#timepicker").datetimepicker({
+            format: "LT",
+          });
+
+          //Bootstrap Duallistbox
+          $(".duallistbox").bootstrapDualListbox();
+
+          //Colorpicker
+          $(".my-colorpicker1").colorpicker();
+          //color picker with addon
+          $(".my-colorpicker2").colorpicker();
+
+          $(".my-colorpicker2").on("colorpickerChange", function (event) {
+            $(".my-colorpicker2 .fa-square").css(
+              "color",
+              event.color.toString()
+            );
+          });
+
+          $("input[data-bootstrap-switch]").each(function () {
+            $(this).bootstrapSwitch("state", $(this).prop("checked"));
+          });
+        });
+        // BS-Stepper Init
+        document.addEventListener("DOMContentLoaded", function () {
+          window.stepper = new Stepper(document.querySelector(".bs-stepper"));
+        });
+
+        // DropzoneJS Demo Code Start
+        Dropzone.autoDiscover = false;
+
+        // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
+        var previewNode = document.querySelector("#template");
+        previewNode.id = "";
+        var previewTemplate = previewNode.parentNode.innerHTML;
+        previewNode.parentNode.removeChild(previewNode);
+
+        var myDropzone = new Dropzone(document.body, {
+          // Make the whole body a dropzone
+          url: "/target-url", // Set the url
+          thumbnailWidth: 80,
+          thumbnailHeight: 80,
+          parallelUploads: 20,
+          previewTemplate: previewTemplate,
+          autoQueue: false, // Make sure the files aren't queued until manually added
+          previewsContainer: "#previews", // Define the container to display the previews
+          clickable: ".fileinput-button", // Define the element that should be used as click trigger to select files.
+        });
+
+        myDropzone.on("addedfile", function (file) {
+          // Hookup the start button
+          file.previewElement.querySelector(".start").onclick = function () {
+            myDropzone.enqueueFile(file);
+          };
+        });
+
+        // Update the total progress bar
+        myDropzone.on("totaluploadprogress", function (progress) {
+          document.querySelector("#total-progress .progress-bar").style.width =
+            progress + "%";
+        });
+
+        myDropzone.on("sending", function (file) {
+          // Show the total progress bar when upload starts
+          document.querySelector("#total-progress").style.opacity = "1";
+          // And disable the start button
+          file.previewElement
+            .querySelector(".start")
+            .setAttribute("disabled", "disabled");
+        });
+
+        // Hide the total progress bar when nothing's uploading anymore
+        myDropzone.on("queuecomplete", function (progress) {
+          document.querySelector("#total-progress").style.opacity = "0";
+        });
+
+        // Setup the buttons for all transfers
+        // The "add files" button doesn't need to be setup because the config
+        // `clickable` has already been specified.
+        document.querySelector("#actions .start").onclick = function () {
+          myDropzone.enqueueFiles(
+            myDropzone.getFilesWithStatus(Dropzone.ADDED)
+          );
+        };
+        document.querySelector("#actions .cancel").onclick = function () {
+          myDropzone.removeAllFiles(true);
+        };
+        // DropzoneJS Demo Code End
+      </script>
+      <!-- Code injected by live-server -->
+      <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ("WebSocket" in window) {
+          (function () {
+            function refreshCSS() {
+              var sheets = [].slice.call(document.getElementsByTagName("link"));
+              var head = document.getElementsByTagName("head")[0];
+              for (var i = 0; i < sheets.length; ++i) {
+                var elem = sheets[i];
+                var parent = elem.parentElement || head;
+                parent.removeChild(elem);
+                var rel = elem.rel;
+                if (
+                  (elem.href && typeof rel != "string") ||
+                  rel.length == 0 ||
+                  rel.toLowerCase() == "stylesheet"
+                ) {
+                  var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                  elem.href =
+                    url +
+                    (url.indexOf("?") >= 0 ? "&" : "?") +
+                    "_cacheOverride=" +
+                    new Date().valueOf();
+                }
+                parent.appendChild(elem);
+              }
+            }
+            var protocol =
+              window.location.protocol === "http:" ? "ws://" : "wss://";
+            var address =
+              protocol +
+              window.location.host +
+              window.location.pathname +
+              "/ws";
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+              if (msg.data == "reload") window.location.reload();
+              else if (msg.data == "refreshcss") refreshCSS();
+            };
+            if (
+              sessionStorage &&
+              !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+            ) {
+              console.log("Live reload enabled.");
+              sessionStorage.setItem(
+                "IsThisFirstTime_Log_From_LiveServer",
+                true
+              );
+            }
+          })();
+        } else {
+          console.error(
+            "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+          );
+        }
+        // ]]>
+      </script>
+
+      <!-- Code injected by live-server -->
+      <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ("WebSocket" in window) {
+          (function () {
+            function refreshCSS() {
+              var sheets = [].slice.call(document.getElementsByTagName("link"));
+              var head = document.getElementsByTagName("head")[0];
+              for (var i = 0; i < sheets.length; ++i) {
+                var elem = sheets[i];
+                var parent = elem.parentElement || head;
+                parent.removeChild(elem);
+                var rel = elem.rel;
+                if (
+                  (elem.href && typeof rel != "string") ||
+                  rel.length == 0 ||
+                  rel.toLowerCase() == "stylesheet"
+                ) {
+                  var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                  elem.href =
+                    url +
+                    (url.indexOf("?") >= 0 ? "&" : "?") +
+                    "_cacheOverride=" +
+                    new Date().valueOf();
+                }
+                parent.appendChild(elem);
+              }
+            }
+            var protocol =
+              window.location.protocol === "http:" ? "ws://" : "wss://";
+            var address =
+              protocol +
+              window.location.host +
+              window.location.pathname +
+              "/ws";
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+              if (msg.data == "reload") window.location.reload();
+              else if (msg.data == "refreshcss") refreshCSS();
+            };
+            if (
+              sessionStorage &&
+              !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+            ) {
+              console.log("Live reload enabled.");
+              sessionStorage.setItem(
+                "IsThisFirstTime_Log_From_LiveServer",
+                true
+              );
+            }
+          })();
+        } else {
+          console.error(
+            "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+          );
+        }
+        // ]]>
+      </script>
+      <!-- Code injected by live-server -->
+      <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ("WebSocket" in window) {
+          (function () {
+            function refreshCSS() {
+              var sheets = [].slice.call(document.getElementsByTagName("link"));
+              var head = document.getElementsByTagName("head")[0];
+              for (var i = 0; i < sheets.length; ++i) {
+                var elem = sheets[i];
+                var parent = elem.parentElement || head;
+                parent.removeChild(elem);
+                var rel = elem.rel;
+                if (
+                  (elem.href && typeof rel != "string") ||
+                  rel.length == 0 ||
+                  rel.toLowerCase() == "stylesheet"
+                ) {
+                  var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                  elem.href =
+                    url +
+                    (url.indexOf("?") >= 0 ? "&" : "?") +
+                    "_cacheOverride=" +
+                    new Date().valueOf();
+                }
+                parent.appendChild(elem);
+              }
+            }
+            var protocol =
+              window.location.protocol === "http:" ? "ws://" : "wss://";
+            var address =
+              protocol +
+              window.location.host +
+              window.location.pathname +
+              "/ws";
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+              if (msg.data == "reload") window.location.reload();
+              else if (msg.data == "refreshcss") refreshCSS();
+            };
+            if (
+              sessionStorage &&
+              !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+            ) {
+              console.log("Live reload enabled.");
+              sessionStorage.setItem(
+                "IsThisFirstTime_Log_From_LiveServer",
+                true
+              );
+            }
+          })();
+        } else {
+          console.error(
+            "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+          );
+        }
+        // ]]>
+      </script>
+      <!-- Code injected by live-server -->
+      <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ("WebSocket" in window) {
+          (function () {
+            function refreshCSS() {
+              var sheets = [].slice.call(document.getElementsByTagName("link"));
+              var head = document.getElementsByTagName("head")[0];
+              for (var i = 0; i < sheets.length; ++i) {
+                var elem = sheets[i];
+                var parent = elem.parentElement || head;
+                parent.removeChild(elem);
+                var rel = elem.rel;
+                if (
+                  (elem.href && typeof rel != "string") ||
+                  rel.length == 0 ||
+                  rel.toLowerCase() == "stylesheet"
+                ) {
+                  var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                  elem.href =
+                    url +
+                    (url.indexOf("?") >= 0 ? "&" : "?") +
+                    "_cacheOverride=" +
+                    new Date().valueOf();
+                }
+                parent.appendChild(elem);
+              }
+            }
+            var protocol =
+              window.location.protocol === "http:" ? "ws://" : "wss://";
+            var address =
+              protocol +
+              window.location.host +
+              window.location.pathname +
+              "/ws";
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+              if (msg.data == "reload") window.location.reload();
+              else if (msg.data == "refreshcss") refreshCSS();
+            };
+            if (
+              sessionStorage &&
+              !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+            ) {
+              console.log("Live reload enabled.");
+              sessionStorage.setItem(
+                "IsThisFirstTime_Log_From_LiveServer",
+                true
+              );
+            }
+          })();
+        } else {
+          console.error(
+            "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+          );
+        }
+        // ]]>
+      </script>
+    </div>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+  </body>
+</html>

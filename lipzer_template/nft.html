@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lipzer Exchange</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+ <!-- Google Font: Source Sans Pro -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+ <!-- iCheck for checkboxes and radio inputs -->
+ <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+ <!-- Bootstrap Color Picker -->
+ <link rel="stylesheet" href="plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+ <!-- Tempusdominus Bootstrap 4 -->
+ <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+ <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+ <!-- Bootstrap4 Duallistbox -->
+ <link rel="stylesheet" href="plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+ <!-- dropzonejs -->
+ <link rel="stylesheet" href="plugins/dropzone/min/dropzone.min.css">
+ <!-- Theme style -->
+ <link rel="stylesheet" href="dist/css/adminlte.min.css">
+ <!--Style CSS-->
+ <link rel="stylesheet" href="style.css">
+
+  <style>
+    /*CSS PARA IMGS CALL AND PUT*/
+    .cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+    }
+    .call{
+      background-image:url(img/call.png);
+      border-radius: 5px;
+    }
+
+    .put{
+      background-image:url(img/put.png);
+      border-radius: 5px;
+    }
+
+    .bnb{
+      background-image:url(img/bnb.png);
+      border-radius: 5px;
+    }
+
+    .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+    .cc-selector input:checked +.drinkcard-cc{
+        -webkit-filter: none;
+          -moz-filter: none;
+                filter: none;
+    }
+    .drinkcard-cc{
+        cursor:pointer;
+        background-size:contain;
+        background-repeat:no-repeat;
+        display:inline-block;
+        width:60px;height:25px;
+        -webkit-transition: all 100ms ease-in;
+          -moz-transition: all 100ms ease-in;
+                transition: all 100ms ease-in;
+        -webkit-filter: brightness(.8) grayscale(.6) opacity(.9);
+          -moz-filter: brightness(.8) grayscale(.6) opacity(.9);
+                filter: brightness(.8) grayscale(.6) opacity(.9);
+    }
+    .drinkcard-cc:hover{
+        -webkit-filter: brightness(.1) grayscale(.2) opacity(.7);
+          -moz-filter: brightness(.1) grayscale(.2) opacity(.7);
+                filter: brightness(.1) grayscale(.2) opacity(.7);
+    }
+
+    /* Extras */
+    a:visited{color:#888}
+    a{color:#444;text-decoration:none;}
+    p{margin-bottom:.3em;}
+
+    /*FINISH CSS CALL AND PUT*/
+    /*BACKGROUND CONFIGURATION*/
+    @media (min-width: 1px) {
+    .background{
+      background-image: url('img/bgnft.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .columnsfooter{
+      flex-direction: column!important;
+    }
+    .logofooter{
+      width: 150px;
+      position: relative;
+      bottom: 25px;
+      right: 25px;
+    }
+  }
+    @media (min-width: 768px) {
+    .background{
+      background-image: url('img/bgnft.jpg');
+      background-repeat: no-repeat;
+      padding: 3em;
+      background-size: cover;
+    }
+    .columnsfooter{
+      flex-direction: unset!important;
+    }
+    .logofooter{
+      width: 150px;
+      position: relative;
+      bottom: 0px;
+      right: 0px;
+    }
+    }
+    @media (min-width: 992px) {
+    .background{
+      background-image: url('img/imgback992.png');
+      background-repeat: no-repeat;
+      padding: 3em;
+      background-size: cover;
+    }
+    .columnsfooter{
+      flex-direction: unset!important;
+    }
+    .logofooter{
+      width: 150px;
+      position: relative;
+      bottom: 0px;
+      right: 0px;
+    }    
+    }
+    @media (min-width: 1700px) {
+    .background{
+      background-image: url('img/imgback992.png');
+      background-repeat: no-repeat;
+      padding: 3em;
+      background-size: cover;
+    }
+    .columnsfooter{
+      flex-direction: unset!important;
+    }
+    .logofooter{
+      width: 150px;
+      position: relative;
+      bottom: 0px;
+      right: 0px;
+    }
+    }
+
+/*COR DOS BTN*/
+.btn-lip {
+  color: #fff;
+  background-color: #EF0048;
+  border-color: #EF0048;
+  box-shadow: none;
+}
+
+.btn-lip:hover {
+  color: #fff;
+  background-color: #b30036;
+  border-color: #b30036;
+}
+
+.btn-lip:focus, .btn-lip.focus {
+  color: #fff;
+  background-color: #b30036;
+  border-color: #b30036;
+  box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+}
+
+.btn-lip.disabled, .btn-lip:disabled {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-lip:not(:disabled):not(.disabled):active, .btn-lip:not(:disabled):not(.disabled).active,
+.show > .btn-lip.dropdown-toggle {
+  color: #fff;
+  background-color: #ff004d;
+  border-color: #ff004d;
+}
+
+.btn-lip:not(:disabled):not(.disabled):active:focus, .btn-lip:not(:disabled):not(.disabled).active:focus,
+.show > .btn-lip.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0 #ff004d;
+}
+/*FIM DA COR DOS BTN*/
+
+/*COR DA BARRA RANGE*/
+.stylerange {
+    -webkit-appearance: none;
+    background: #EF0048;
+    outline: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 9px;   
+}
+.stylerange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+
+    background: #b30036;
+    cursor: pointer;
+}
+
+.stylerange::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+
+    background: #EF0048;
+    cursor: pointer;
+}
+/*FINISH COLOR RANGE*/
+
+/*COLORS ON NAVBAR*/
+
+.navbarcolor{
+  background-color: #EF0048;
+}
+.logo{
+  border: transparent;
+  border-radius: 20px;
+}
+/* FINISH COLOR ON NAVBAR */
+
+/*ANIMATION IMG*/
+.object {
+  animation: MoveUpDown 4.5s linear infinite;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 30px;
+  }
+}
+/* FINISH ANIMATION IMG*/
+
+/*LIST GROUP*/
+.list-group-itens {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-left: 0;
+  border-radius: 0;
+  border-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/*FINISH LIST GROUP*/
+
+/*CSS DO FOOTER*/
+.menufooter{
+  color: white;
+}
+.titulosfooter{
+  color: #ff0048;
+  font-size: x-large;
+  font-weight: bold;
+}
+/*END CSS DO FOOTER*/
+/*USED IN THIS PAGE*/
+.mouse:hover{
+  cursor: pointer;
+  position:relative;
+  right: -1px;
+  top: -1px;
+}
+.back_box{
+  background: rgb(2, 18, 43, 0.6);
+}
+/*END USED IN THIS PAGE*/
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbarcolor navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <img class="logo col-5 col-lg-auto col-md-auto mr-auto" src="img/logo.png">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="home.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a  href="nft.html" class="nav-link">NFT</a>
+        </li>
+        <li class="nav-item">
+          <a  href="swap.html" class="nav-link">Swap</a>
+        </li>
+        <li class="nav-item">
+          <a  href="marketplace.html" class="nav-link">NFT Marketplace</a>
+        </li>
+        <li class="nav-item">
+          <a  href="invite.html" class="nav-link">Friends</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="navbar-nav ml-auto n5">
+      <li class="nav-item">
+        <button type="button" class="btn btn-light block" style="color: #EF0048; border: transparent; border-radius: 20px;">Connect to Wallet</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div style="background-image: url('img/bg1.jpg'); background-size: cover; background-position-y: bottom;">
+    <!-- Content Header (Page header) -->
+    
+<br>
+<section class="content" style="position: relative; bottom: 25px;">
+  <!-- Default box -->
+  <div class="">
+    <div class="my-sm-5">
+      <img class="object" style="width: 25%;" src="img/astronautcartoon.png">
+      <div class="border elevation-3 m-sm-auto col-lg-5 col-xl-4 back_box" style="border-radius: 20px; position: relative; top: 100px;">
+        <br>       
+       <div class="text-center" style="margin-left: 15px;margin-right: 15px;">
+        <div class="form-group">
+          <img src="img/smartoption.png">
+          <p class="lead" style="color: white;">Create your NFT</p>  
+        </div>
+        <div class="form-group">
+          <label for="call" style="color: white;">Option</label>
+          <div class="cc-selector" style="margin-bottom: -22px;">
+            <input id="call" type="radio" name="opcao" value="call" />
+            <label class="drinkcard-cc call" for="call"></label>
+            <input id="put" type="radio" name="opcao" value="put" />
+            <label class="drinkcard-cc put"for="put"></label>
+          </div>
+        
+       </div>
+        <div class="form-group">
+              <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+              <label for="bnb" style="color: white;">Coin:</label>
+                <div class="cc-selector" style="margin-bottom: -22px; margin-top: 10px;">
+                  <input id="bnb" type="radio" name="bnb" value="bnb" />
+                  <label style="max-width: 26px; margin-bottom: 10px; margin-top: -10px;" class="drinkcard-cc bnb" for="bnb"></label>
+                </div>
+        </div>
+        <div class="form-group">
+          <label style="color: white;" for="inputName">BNB Amount</label>
+          <input style="border-radius: 15px; color: white; background-color: transparent;" type="text" id="inputName" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label style="color: white;" for="quotation">Quotation</label>
+          <input  type="range" id="quotation" class="form-control stylerange" min="0.5" max="10.5" step="0.5" />
+        </div>
+        <div class="form-group">
+          <label style="color: white;" for="inputSubject">Prize Value</label>
+          <input style="border-radius: 15px; color: white; background-color: transparent;" type="text" id="inputSubject" class="form-control" />
+        </div>
+        <div class="form-group">
+         <div class="btn-group">
+          <button class="fc-dayGridMonth-button btn btn-lip" style="border-bottom-left-radius: 15px; border-top-left-radius: 15px;" type="button">1 Month</button>
+          <button class="fc-dayGridMonth-button btn btn-lip" type="button">3 Months</button>
+          <button class="fc-dayGridMonth-button btn btn-lip" type="button">6 Months</button>
+          <button class="fc-dayGridMonth-button btn btn-lip" style="border-bottom-right-radius: 15px; border-top-right-radius: 15px;" type="button">12 Months</button>
+         </div>
+        </div>
+        <div class="form-group">
+          <p style="font-variant: all-small-caps; margin-top: -7px; font: status-bar; color: white;">EXPIRATION DAY 29/03/1996</p>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-lip col-md-12" style="border-radius: 15px;" value="Create">
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+<br><br>
+</section>
+    <!-- Main content -->
+    <section class="">
+      <div class="">
+      <div class="col-9 container-fluid" style="position: relative; top: 5rem;">
+        <div>
+          <h1 style="color: white;">My NFTs</h1>
+        </div>
+        <br>
+          <div class="card-columns">
+            <!-- Custom Tabs -->
+            <section class="">
+              <div class="container-fluid">
+                <!--Primeiro Card-->
+                <div class="border card card-row card-success" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                  <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                    <h3 class="card-title">
+                      CALL
+                    </h3>
+                  </div>
+                    <div>
+                      <div class="card-body elevation-5 back_box" style="border-radius: 20px;">
+                        <div class="text-center">
+                          <img class="profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;">
+                        </div>
+                        <h3 class="profile-username text-center" style="color: white;">BNB</h3>
+                        <p class="text-center" style="color: white;">Amount 0.002</p>
+                        <ul class="list-group list-group-unbordered mb-3">
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Quotation</b>
+                            <a class="float-right" style="color: white">$5.9944</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Time</b>
+                            <a class="float-right" style="color: white;">6 Months</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Prize Value</b>
+                            <a class="float-right" style="color: white;">$100</a>
+                          </li>
+                        </ul>
+                          <button type="button" class="btn btn-tool col-6">
+                            <b>CANCEL</b>
+                          </button>
+                          <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                            <b>SELL</b>
+                          </button>
+                      </div>
+                    </div>
+                </div>
+                <!--SEGUNDO CARD-->
+                <div class="border card card-row card-danger" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                  <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                    <h3 class="card-title">
+                      PUT
+                    </h3>
+                  </div>
+                    <div>
+                      <div class="card-body elevation-5 back_box" style="border-radius: 20px;">
+                        <div class="text-center">
+                          <img class="profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;">
+                        </div>
+                        <h3 class="profile-username text-center" style="color: white;">BNB</h3>
+                        <p class="text-center" style="color: white;">Amount 0.002</p>
+                        <ul class="list-group list-group-unbordered mb-3">
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Quotation</b>
+                            <a class="float-right" style="color: white">$5.9944</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Time</b>
+                            <a class="float-right" style="color: white;">6 Months</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Prize Value</b>
+                            <a class="float-right" style="color: white;">$100</a>
+                          </li>
+                        </ul>
+                        <button type="button" class="btn btn-tool col-6">
+                          <b>CANCEL</b>
+                        </button>
+                        <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                          <b>SELL</b>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+                <!--TERCEIRO CARD-->
+                <div class="border card card-row card-success" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                  <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                    <h3 class="card-title">
+                      CALL
+                    </h3>
+                  </div>
+                    <div>
+                      <div class="card-body elevation-5 back_box" style="border-radius: 20px;">
+                        <div class="text-center">
+                          <img class="profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;">
+                        </div>
+                        <h3 class="profile-username text-center" style="color: white;">BNB</h3>
+                        <p class="text-center" style="color: white;">Amount 0.002</p>
+                        <ul class="list-group list-group-unbordered mb-3">
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Quotation</b>
+                            <a class="float-right" style="color: white">$5.9944</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Time</b>
+                            <a class="float-right" style="color: white;">6 Months</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Prize Value</b>
+                            <a class="float-right" style="color: white;">$100</a>
+                          </li>
+                        </ul>
+                        <button type="button" class="btn btn-tool col-6">
+                          <b>CANCEL</b>
+                        </button>
+                        <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                          <b>SELL</b>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+                <!--QUARTO CARD-->
+                <div class="border card card-row card-success" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                  <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                    <h3 class="card-title">
+                      CALL
+                    </h3>
+                  </div>
+                    <div>
+                      <div class="card-body elevation-5 back_box" style="border-radius: 20px;">
+                        <div class="text-center">
+                          <img class="profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;">
+                        </div>
+                        <h3 class="profile-username text-center" style="color: white;">BNB</h3>
+                        <p class="text-center" style="color: white;">Amount 0.002</p>
+                        <ul class="list-group list-group-unbordered mb-3">
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Quotation</b>
+                            <a class="float-right" style="color: white">$5.9944</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Time</b>
+                            <a class="float-right" style="color: white;">6 Months</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Prize Value</b>
+                            <a class="float-right" style="color: white;">$100</a>
+                          </li>
+                        </ul>
+                        <button type="button" class="btn btn-tool col-6">
+                          <b>CANCEL</b>
+                        </button>
+                        <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                          <b>SELL</b>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+                <!--QUINTO CARD-->
+                <div class="border card card-row card-danger" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                  <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                    <h3 class="card-title">
+                      PUT
+                    </h3>
+                  </div>
+                    <div>
+                      <div class="card-body elevation-5 back_box" style="border-radius: 20px;">
+                        <div class="text-center">
+                          <img class="profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;">
+                        </div>
+                        <h3 class="profile-username text-center" style="color: white;">BNB</h3>
+                        <p class="text-center" style="color: white;">Amount 0.002</p>
+                        <ul class="list-group list-group-unbordered mb-3">
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Quotation</b>
+                            <a class="float-right" style="color: white">$5.9944</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Time</b>
+                            <a class="float-right" style="color: white;">6 Months</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Prize Value</b>
+                            <a class="float-right" style="color: white;">$100</a>
+                          </li>
+                        </ul>
+                        <button type="button" class="btn btn-tool col-6">
+                          <b>CANCEL</b>
+                        </button>
+                        <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                          <b>SELL</b>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+                <!--FIM DO QUINTO CARD-->
+              </div>
+            </section>
+          </div>
+          <section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </section>
+        <!-- /.row -->
+        <!-- END CUSTOM TABS -->
+
+        
+      </div><!-- /.container-fluid -->
+    </div>
+    </section>
+    <!-- /.content -->
+    <div style="padding: 75px; background-color: #010e24;">
+      <div class="container">
+        <div class="row justify-content-lg-around columnsfooter justify-content-md-around">
+          <img class="h-100 logo logofooter" src="img/logo.png">
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              Pages
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="nft.html">
+                Home
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="nft.html">
+                NFT
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="swap.html">
+                Swap
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="marketplace.html">
+                Marketplace
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="invite.html">
+                Friends
+              </a>
+            </li>
+          </ul>
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              About Us
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                Documentation
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                LIP Token
+              </a>
+            </li>
+          </ul>
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              Help
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                Contact Us
+              </a>
+            </li>
+            <li class="menufooter">
+              <a class="menufooter mouse" href="#">
+                Guides
+              </a>
+            </li>
+          </ul>
+          <ul class="list-inline">
+            <li class="titulosfooter">
+              Products
+            </li>
+            <li class="col-4" style="margin-top: 10px; margin-bottom: 10px; border-bottom: 4px solid #dee2e6;">
+            </li>
+            <li>
+              <a class="menufooter mouse" href="#">
+                Trading
+              </a>
+            </li>
+            <li>
+              <a class="menufooter mouse" href="#">
+                NFT
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="row justify-content-around" style="position: relative;
+        top: 30px;">
+          <a style="color: white" href="#">
+            <i class="fab fa-github fa-lg mouse"></i>
+          </a>
+          <a style="color: white" href="#">
+            <i class="fab fa-facebook-f fa-lg mouse"></i>
+          </a>
+          <a style="color: white" href="#">
+            <i class="fab fa-whatsapp fa-lg mouse"></i>
+          </a>
+          <a style="color: white" href="#">
+            <i class="fab fa-twitter fa-lg mouse"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/inputmask/jquery.inputmask.min.js"></script>
+<!-- date-range-picker -->
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- BS-Stepper -->
+<script src="plugins/bs-stepper/js/bs-stepper.min.js"></script>
+<!-- dropzonejs -->
+<script src="plugins/dropzone/min/dropzone.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!--Apontamento Main.js-->
+<script src="main.js"></script>
+
+
+</body>
+</html>
