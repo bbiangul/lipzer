@@ -1,4 +1,4 @@
-# lipzer
+# Lipzer
 Lipzer is a DeFi project to make possible for the community to create buy or sell options (call or put) for cryptoassets, with specif deadline, quantity and prize.
 
 All the options are NFTs that can be stored, transferred and negotiated in the marketplace.
