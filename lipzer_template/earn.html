@@ -9,21 +9,15 @@
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
  <!-- Font Awesome -->
  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
- <!-- daterange picker -->
- <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
  <!-- iCheck for checkboxes and radio inputs -->
  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
  <!-- Bootstrap Color Picker -->
  <link rel="stylesheet" href="plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
  <!-- Tempusdominus Bootstrap 4 -->
  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
- <!-- Select2 -->
- <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
  <!-- Bootstrap4 Duallistbox -->
  <link rel="stylesheet" href="plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
- <!-- BS Stepper -->
- <link rel="stylesheet" href="plugins/bs-stepper/css/bs-stepper.min.css">
  <!-- dropzonejs -->
  <link rel="stylesheet" href="plugins/dropzone/min/dropzone.min.css">
  <!-- Theme style -->
@@ -32,6 +26,59 @@
  <link rel="stylesheet" href="style.css">
 
   <style>
+    /*CSS PARA IMGS CALL AND PUT*/
+    .cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+    }
+    .call{
+      background-image:url(img/call.png);
+      border-radius: 5px;
+    }
+
+    .put{
+      background-image:url(img/put.png);
+      border-radius: 5px;
+    }
+
+    .bnb{
+      background-image:url(img/bnb.png);
+      border-radius: 5px;
+    }
+
+    .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+    .cc-selector input:checked +.drinkcard-cc{
+        -webkit-filter: none;
+          -moz-filter: none;
+                filter: none;
+    }
+    .drinkcard-cc{
+        cursor:pointer;
+        background-size:contain;
+        background-repeat:no-repeat;
+        display:inline-block;
+        width:60px;height:25px;
+        -webkit-transition: all 100ms ease-in;
+          -moz-transition: all 100ms ease-in;
+                transition: all 100ms ease-in;
+        -webkit-filter: brightness(.8) grayscale(.6) opacity(.9);
+          -moz-filter: brightness(.8) grayscale(.6) opacity(.9);
+                filter: brightness(.8) grayscale(.6) opacity(.9);
+    }
+    .drinkcard-cc:hover{
+        -webkit-filter: brightness(.1) grayscale(.2) opacity(.7);
+          -moz-filter: brightness(.1) grayscale(.2) opacity(.7);
+                filter: brightness(.1) grayscale(.2) opacity(.7);
+    }
+
+    /* Extras */
+    a:visited{color:#888}
+    a{color:#444;text-decoration:none;}
+    p{margin-bottom:.3em;}
+
+    /*FINISH CSS CALL AND PUT*/
     /*BACKGROUND CONFIGURATION*/
     @media (min-width: 1px) {
     .background{
@@ -47,12 +94,6 @@
       position: relative;
       bottom: 25px;
       right: 25px;
-    }
-    .img_topo{
-      width: 80%; 
-      margin-top: 20%;
-      left: 0px;
-      position: relative;
     }
   }
     @media (min-width: 768px) {
@@ -71,12 +112,6 @@
       bottom: 0px;
       right: 0px;
     }
-    .img_topo{
-      width: 80%;
-      margin-top: 0px;
-      left: 106px;
-      position: relative;
-    }
     }
     @media (min-width: 992px) {
     .background{
@@ -94,12 +129,6 @@
       bottom: 0px;
       right: 0px;
     }    
-    .img_topo{
-      width: 80%;
-      margin-top: 0px;
-      left: 106px;
-      position: relative;
-    }
     }
     @media (min-width: 1700px) {
     .background{
@@ -116,12 +145,6 @@
       position: relative;
       bottom: 0px;
       right: 0px;
-    }
-    .img_topo{
-      width: 80%;
-      margin-top: 0px;
-      left: 106px;
-      position: relative;
     }
     }
 
@@ -165,6 +188,36 @@
 }
 /*FIM DA COR DOS BTN*/
 
+/*COR DA BARRA RANGE*/
+.stylerange {
+    -webkit-appearance: none;
+    background: #EF0048;
+    outline: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 9px;   
+}
+.stylerange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+
+    background: #b30036;
+    cursor: pointer;
+}
+
+.stylerange::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+
+    background: #EF0048;
+    cursor: pointer;
+}
+/*FINISH COLOR RANGE*/
+
 /*COLORS ON NAVBAR*/
 
 .navbarcolor{
@@ -175,6 +228,39 @@
   border-radius: 20px;
 }
 /* FINISH COLOR ON NAVBAR */
+
+/*ANIMATION IMG*/
+.object {
+  animation: MoveUpDown 4.5s linear infinite;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 30px;
+  }
+}
+/* FINISH ANIMATION IMG*/
+
+/*LIST GROUP*/
+.list-group-itens {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-left: 0;
+  border-radius: 0;
+  border-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/*FINISH LIST GROUP*/
 
 /*CSS DO FOOTER*/
 .menufooter{
@@ -196,88 +282,7 @@
 .back_box{
   background: rgb(2, 18, 43, 0.6);
 }
-.custom-shape-divider-bottom-1643658669 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-.custom-shape-divider-bottom-1643658669 svg {
-    position: relative;
-    display: block;
-    width: calc(245% + 1.3px);
-    height: 150px;
-    transform: rotateY(180deg);
-}
-.custom-shape-divider-bottom-1643658669 .shape-fill {
-    fill: #c70038;
-}
-.custom-shape-divider-top-1643659964 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.custom-shape-divider-top-1643659964 svg {
-    position: relative;
-    display: block;
-    width: calc(245% + 1.3px);
-    height: 150px;
-    transform: rotateY(180deg);
-}
-
-.custom-shape-divider-top-1643659964 .shape-fill {
-    fill: #c70038;
-}
 /*END USED IN THIS PAGE*/
-/*CARDS*/
-.margin{
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  color: #d3d3d3;
-}
-.card_o{
-  background: #c70038;
-  box-shadow: none;
-}
-.title_card_down{
-  margin-top: 48px;
-}
-/*END CARDS*/
-
-/* Imagem Connected */
-.img-connected{
-  width: 70%;
-}
-.img-connected:hover{
-  cursor: pointer;
-  opacity: 80%;
-}
-.img-connected:active{
-  padding: 1px;
-  cursor: pointer;
-}
-.dropdown-menu.show{
-  display: block;
-  right: 0;
-  left: auto;
-  background: #010e24;
-  border-radius: 10px;
-  min-width: 26rem;
-}
-.userAdress{
-  color: white;
-  background: #FF0048;
-  border-radius: 10px;
-}
-/* Fim Imagem Connected */
   </style>
 </head>
 <body>
@@ -291,10 +296,10 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a href="index.html" class="nav-link">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a  href="nft.html" class="nav-link">NFT</a>
         </li>
         <li class="nav-item">
@@ -310,76 +315,117 @@
     </div>
     <ul class="navbar-nav ml-auto n5">
       <li class="nav-item">
-        <button type="button" id='loginButton' onclick="" class="btn btn-light block" style="color: #EF0048; border: transparent; border-radius: 20px;">Connect to Wallet</button>
+        <button type="button" class="btn btn-light block" style="color: #EF0048; border: transparent; border-radius: 20px;">Connect to Wallet</button>
       </li>
     </ul>
-    <div class="dropdown col-1">
-      <img src="./img/profile.png" class="dropdown-toggle img-connected" style="display: none;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 70%;" />
-      <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
-        <p style="color: white;" id="userWallet"></p>
-        <button  class="btn btn-lip" type="button" id="logoutButton">Logout metamask</button>
-      </div>
-    </div>
   </nav>
 
   <!-- Content Wrapper. Contains page content -->
-  <div style="background-image: linear-gradient(1deg,#02183c, #010e24);">
+  <div style="background-image: url('img/bg1.jpg'); background-size: cover; background-position-y: bottom;">
     <!-- Content Header (Page header) -->
-  <br>
-    <div class="container mt-5">
-      <div class="row justify-content-lg-around">
-        <div class="col-lg-6" style="color: white; position: relative; top: 50px;">
-          <h1>Bringing Stock trading Experience | to the DeFi Ecosystem</h1>
-          <p style="margin-top: 5%">Lipzer is a Decentralized Trading Protocol operating on Binance Smart Chain (BSC), that enables traders, liquidity providers and developers to participate in an open financial market with no barriers to entry. We are going to make possible for the community to create buy or sell options (call or put) for cryptoassets, with specif deadline, quantity and prize. </p> <!--Main smart contracts deployed in BSC TestNET: <br>TOKEN -> transaction hash: 0x89868699663389c5321fa78df2c6ed101a70c142aef36ee71cfffa3c9e542f42 contract address: 0x7799eC44D775B5B9138f09c7030f0B303B891596 <br>TREASURY -> transaction hash: 0xdc1ed996414741aec5398913aa89b2c56e9308b9d3af5957f95593c128866d08 contract address: 0xC501848531D7f2D1B8edc2501dEB16b25bBB5258 <br>STAKING -> transaction hash: 0x7ecf875b4573a8e77a5c0e1db73492f4441b3ed6f39babfcb49971f145d4c1b2 contract address: 0x2aE5d5EEaa65F0E6F1489Ef67fd3058D3CcaDf19 -->
-          <!-- <p style="margin-top: 5%"><a style="color: #FF0048;" href="#">Learn More</a></p> -->
-          <button style="margin-top: 10%; width: 40%; border-radius: 40px; height: 13%; font-size: large;" type="button" class="btn btn-lip">Buy LIP</button>
+    
+<br>
+
+    <!-- Main content -->
+    <section class="">
+      <div class="">
+      <div class="col-9 container-fluid" style="position: relative; top: 5rem;">
+        <div>
+          <h1 style="color: white;">Farming</h1>
         </div>
-        <div class="col-lg-6">
-          <img class="img_topo" src="img/astronautwhole.png" style="margin-bottom: 20%;">
-        </div>
-      </div>
-    </div>
-    <div class="custom-shape-divider-bottom-1643658669" style="position: relative; top: -61px;">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-      </svg>
-    </div>
-    <div class="container-fluid" style="background: #c70038; margin-top: -4rem; height: 660px;">
-      <div class="row justify-content-lg-center" style="position:relative; top: 50px;">
-        <h1 style="color: white;font-size: 56px; font-weight: bold;">OUR MAIN FEATURES</h1>
-        <div class="card-columns text-center col-lg-10" style="margin-top: 4rem;">
-          <div class="card card-row card_o">
-            <i class="fas fa-chart-line fa-7x" style="color: white;"></i>
-            <h1 style="font-weight: bold;color: white;">Invest</h1>
-            <h5 class="title_card_down margin" style="color: white;">Your NFT option has earning interest!</h5>
-            <p class="margin">Lipzer holders can create NFT options (call or put) to receive interests (rewards and transaction fees). In addition, you will earn prize when your NFT option has been sold on the marketplace.</p>
-            <!-- <p><a href="#">Learn More</a></p> -->
+        <br>
+          <div class="card-columnss" style="width:50%">
+            <!-- Custom Tabs -->
+            <section class="">
+              <div class="container-fluid">
+                <!--Primeiro Card-->
+                <div class="border card card-row card-success" style="height: 83%; border-radius: 20px; background-color: transparent;">
+                  <div class="border-transparent card-header" style="border-radius: 20px 20px 0px 0px;">
+                    <h3 class="card-title">
+                      ~$0.000
+                    </h3>
+                  </div>
+                    <div>
+                      <div class="card-body elevation-5 back_box" style="border-radius: 20px;">
+                        <div class="text-center">
+                          <img class="profile-user-img img-circle elevation-5" src="img/bnb.png" style="width: 30%;">
+                        </div>
+                        <h3 class="profile-username text-center" style="color: white;">LPZ - BUSD</h3>
+                        <p class="text-center" style="color: white;">Earned 0.002 </p>
+                        <ul class="list-group list-group-unbordered mb-3">
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>APY</b>
+                            <a class="float-right" style="color: white">5944.77%</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>Harvest Lockup</b>
+                            <a class="float-right" style="color: white;">8 Hours</a>
+                          </li>
+                          <li class="list-group-itens" style="color: white; background: none;">
+                            <b>LP Staked</b>
+                            <a class="float-right" style="color: white;">$100</a>
+                          </li>
+                        </ul>
+                          <button type="button" class="btn btn-tool col-6">
+                            <b>ADD</b>
+                          </button>
+                          <button type="button" href="#" class="btn btn-tool m-auto col-6 float-right">
+                            <b>HARVEST</b>
+                          </button>
+                      </div>
+                    </div>
+                </div>
+              
+              </div>
+            </section>
           </div>
-          <div class="card card-row card_o">
-            <i class="fas fa-lock fa-7x" style="color: white;"></i>
-            <h1 style="font-weight: bold;color: white;" >Protection</h1>
-            <h5 class="title_card_down margin" style="color: white;">Lock your risks!</h5>
-            <p class="margin">Lipzer Exchange protocol enables traders to lock their risks by getting a PUT (NFT). In deadline date, you can choose to execute the option and sell your assets for a previous determined price.</p>
-            <!-- <p><a href="#">Learn More</a></p> -->
+          <div class="container" style="color: white; margin-top: 50px;">
+            <div class="row">
+              <h2>Why to farm LPZ?</h2>
+            </div>
+            <div class="row">
+              <div class="card-columns text-center">
+                <div class="card card_o">
+                  <img style="width: 60%; margin-bottom: 20px; margin-top: 20px;" src="img/astronautfish.png">
+                  <h4>Get A Referral Link</h4>
+                  <p class="margin">Connect your wallet and generate your referral link.</p>
+                </div>
+                <div class="card card_o border" style="background: none;">
+                  <h4 style="margin-top: 50px;">Farms Referral Rewards</h4>
+                  <p style="margin-top: 34px; margin-bottom: 65px;" class="margin">Earn 5% of your referrals’ rewards on Farms! Your rewards will be displayed on the referral balance once your invited users withdraw their earned Lipzer tokens.</p>
+                  <p style="margin-bottom: 37px;"><a href="#" style="color: #EF0048;">Learn More</a></p>
+                </div>
+                <div class="card card_o">
+                  <img style="width: 60%; margin-bottom: 20px; margin-top: 20px;" src="img/astronautfish.png">
+                  <h4>Earn Lipzer</h4>
+                  <p style="margin-bottom: 40px;" class="margin">Collect your referral rewards.</p>
+                </div>
+                <div class="card card_o border" style="background: none;">
+                  <h4 style="margin-top: 53px;">Launchpools Referral Rewards</h4>
+                  <p style="margin-top: 35px; margin-bottom: 63px;" class="margin">Earn 5% of your referrals’ profits obtained in Launchpools! The rewards are only valid for the pool in which Lipzer is staked in return for more Lipzer.</p>
+                  <p style="margin-bottom: 40px;"><a href="#" style="color: #EF0048;">Learn More</a></p>
+                </div>
+                <div class="card card_o">
+                  <img style="width: 60%; margin-bottom: 20px; margin-top: 20px;" src="img/astronautfish.png">
+                  <h4>Invite friends</h4>
+                  <p class="margin">Invite your friends to register via your referral link.</p>
+                </div>
+                <div class="card card_o border" style="background: none;">
+                  <h4 style="margin-top: 48px;">Trading Referral</h4>
+                  <p style="margin-top: 36px; margin-bottom: 37px;" class="margin">Get commission rewards each time your referrals make a swap! Receive your rewards immediately after the swap is made. Swaps referral program will be active for certain pairs only.</p>
+                  <p style="margin-bottom: 40px;"><a href="#" style="color: #EF0048;">Learn More</a></p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="card card-row card_o">
-            <i class="fas fa-arrow-up fa-7x" style="color: white;"></i>
-            <h1 style="font-weight: bold;color: white;">Invest</h1>
-            <h5 class="title_card_down margin" style="color: white;">Take your trading to the next level!</h5>
-            <p class="margin">Now you can have a new way to trade your assets and get profit from the market.</p>
-            <!-- <p><a href="#">Learn More</a></p> -->
-          </div>
-        </div>
-      </div>
-    <div class="custom-shape-divider-top-1643659964" style="position: relative; top: 64px; width: 102%; left: -26px;background: #010e24;">
-      <svg style="height: 174px;" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-      </svg>
-    </div>
+          <section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </section>
         <!-- /.row -->
         <!-- END CUSTOM TABS -->
 
@@ -533,10 +579,6 @@
 <script src="dist/js/demo.js"></script>
 <!--Apontamento Main.js-->
 <script src="main.js"></script>
-<!--WEB 3.0-->
-<script src="https://cdn.jsdelivr.net/npm/web3js-cdn@1.3.0/web3.min.js"></script>
-<script src="src/require.js"></script>
-<script src="src/main.js"></script>
 
 
 </body>
