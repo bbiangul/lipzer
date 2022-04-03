@@ -313,24 +313,23 @@
         </li>
       </ul>
     </div>
-    <ul class="navbar-nav ml-auto n5">
-      <li class="nav-item">
-        <button type="button" id='loginButton' onclick="" class="btn btn-light block" style="color: #EF0048; border: transparent; border-radius: 20px;">Connect to Wallet</button>
-      </li>
-      <li class="nav-item">
-        <div class="dropdown">
-          <img src="./img/profile.png" class="dropdown-toggle img-connected float-right" style="display: none;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 70%;" />
-          <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
-            <p style="color: white;" id="userWallet"></p>
-            <div class="d-flex justify-content-center">
-              <img src="./img/logoicon.png" style="width: 23px;"/>
-              <p style="color: white;">$5.64</p>
+    <div class="col-5 d-flex">
+      <ul class="navbar-nav ml-auto n5">
+        <li class="nav-item">
+          <button type="button" id='loginButton' onclick="" class="btn btn-light block" style="color: #EF0048; border: transparent; border-radius: 20px;">Connect to Wallet</button>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <img src="./img/profile.png" class="dropdown-toggle img-connected float-right" style="display: none;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 70%;" />
+            <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
+              <p style="color: white;" id="userWallet"></p>
+              <img src="./img/logoicon.png" /><p style="color: white;">$5.64</p>
+              <button  class="btn btn-lip btn-connect" type="button" id="logoutButton">Logout metamask</button>
             </div>
-            <button  class="btn btn-lip btn-connect" type="button" id="logoutButton">Logout metamask</button>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Content Wrapper. Contains page content -->

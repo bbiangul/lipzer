@@ -24,6 +24,7 @@
  <link rel="stylesheet" href="plugins/bs-stepper/css/bs-stepper.min.css">
  <!-- Theme style -->
  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+ <link rel="stylesheet" href="./style.css">
 
   <style>
     /*BACKGROUND CONFIGURATION*/
@@ -339,25 +340,37 @@
         <li class="nav-item">
           <a href="index.html" class="nav-link">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a  href="nft.html" class="nav-link">NFT</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a  href="swap.html" class="nav-link">Swap</a>
         </li>
         <li class="nav-item">
-          <a  href="marketplace.html" class="nav-link">NFT Marketplace</a>
+          <a  href="marketplace.html" class="nav-link">Marketplace</a>
         </li>
         <li class="nav-item">
           <a  href="invite.html" class="nav-link">Friends</a>
         </li>
       </ul>
     </div>
-    <ul class="navbar-nav ml-auto n5">
-      <li class="nav-item">
-        <button type="button" class="btn btn-light block" style="color: #EF0048; border: transparent; border-radius: 20px;">Connect to Wallet</button>
-      </li>
-    </ul>
+    <div class="col-5 d-flex">
+      <ul class="navbar-nav ml-auto n5">
+        <li class="nav-item">
+          <button type="button" id='loginButton' onclick="" class="btn btn-light block" style="color: #EF0048; border: transparent; border-radius: 20px;">Connect to Wallet</button>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <img src="./img/profile.png" class="dropdown-toggle img-connected float-right" style="display: none;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 70%;" />
+            <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
+              <p style="color: white;" id="userWallet"></p>
+              <img src="./img/logoicon.png" /><p style="color: white;">$5.64</p>
+              <button  class="btn btn-lip btn-connect" type="button" id="logoutButton">Logout metamask</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Content Wrapper. Contains page content -->
@@ -618,6 +631,9 @@
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3js-cdn@1.3.0/web3.min.js"></script>
+<script src="src/require.js"></script>
+<script src="src/main.js"></script>
 
 <script>
 //SCRIPTS USED ONLY HERE  
