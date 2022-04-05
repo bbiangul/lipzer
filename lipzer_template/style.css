@@ -41,7 +41,11 @@
 }
 /* Media Queries */
 @media (min-width: 1px) {
-
+  .btn-light{
+    color: #EF0048;
+    border: transparent;
+    border-radius: 20px;
+  }
   .dropdown-menu.show{
     display: block;
     right: 0;
@@ -111,7 +115,22 @@
 
 }
 @media (min-width: 768px) {
-
+  .btn-light{
+    color: #EF0048;
+    border: transparent;
+    border-radius: 20px;
+  }
+  .LipValue{
+    color: #ff0048;
+    position: relative;
+    top: 6px;
+  }
+  .L-style{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 9px;
+  }
   .dropdown-menu.show{
     display: block;
     right: 0;
@@ -182,15 +201,20 @@
 
 }
 @media (min-width: 992px) {
-
+  .btn-light{
+    color: #EF0048;
+    border: transparent;
+    border-radius: 20px;
+  }
   .dropdown-menu.show{
     display: block;
     right: 0;
     left: auto;
     background: #010e24;
-    border-radius: 10px;
+    border-radius: 20px;
     min-width: 26rem;
     top: 54px;
+    border: solid 1px white;
   }
   .userAdress{
     color: white;
@@ -212,10 +236,11 @@
     border-radius: 20px;
   }
   .img-connected{
-      width: 10%;
-      display: block;
-      background: #fdfdfd;
-      border-radius: 101px;
+    position: static; 
+    width: 100%;
+    display: block;
+    background: #fdfdfd;
+    border-radius: 101px;
   }
   .img-connected:hover{
       cursor: pointer;
@@ -249,6 +274,11 @@
 }
 @media (min-width: 1300px) {
 
+  .btn-light{
+    color: #EF0048;
+    border: transparent;
+    border-radius: 20px;
+  }
   .dropdown-menu.show{
     display: block;
     right: 0;
@@ -314,7 +344,11 @@
     }
 }
 @media (min-width: 1700px) {
-  
+  .btn-light{
+    color: #EF0048;
+    border: transparent;
+    border-radius: 20px;
+  }
   .ajust-ul-navbar{
     -webkit-flex: none;
     -ms-flex: none;
@@ -503,3 +537,12 @@
   margin-top: 48px;
 }
 /*END CARDS*/
+.p-user{
+  color: #ff0048;
+  border: solid 1px white;
+  border-radius: 20px;
+  background-color: white;
+}
+.color-white{
+  color: white;
+}

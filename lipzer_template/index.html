@@ -61,17 +61,35 @@
       </ul>
     </div>
     <div class="col-5 d-flex">
-      <ul class="navbar-nav ml-auto n5">
-        <li class="nav-item">
-          <button type="button" id='loginButton' onclick="" class="btn btn-light block" style="color: #EF0048; border: transparent; border-radius: 20px;">Connect to Wallet</button>
+      <ul class="justify-content-end navbar-nav ml-auto n5" style="display: flex;">
+        <li class="nav-item" style="align-self: center;">
+          <div id="DivLipValue" class="d-flex justify-content-center mr-3" style="height: 37px; background-color: white;border-radius: 20px;width: 80px;">
+            <img class="L-style" src="./img/L.png" />
+            <p class="font-weight-bold LipValue">$5,24</p>
+          </div>
         </li>
         <li class="nav-item">
+          <div>
+            <button type="button" id='loginButton' onclick="" class="btn btn-light block">Connect to Wallet</button>
+          </div>
+        </li>
+        <li id="Control" class="nav-item">
           <div class="dropdown">
             <img src="./img/profile.png" class="dropdown-toggle img-connected float-right" style="display: none;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 70%;" />
             <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
-              <p style="color: white;" id="userWallet"></p>
-              <img src="./img/logoicon.png" /><p style="color: white;">$5.64</p>
-              <button  class="btn btn-lip btn-connect" type="button" id="logoutButton">Logout metamask</button>
+              <div class="col-12 d-flex justify-content-center mt-2">
+                <p class="p-user col-lg-10" id="userWallet"></p>
+              </div>
+              <div class="d-flex justify-content-center">
+                <div style="background-color: #071b3c; border-radius: 20px;" class="mb-3 col-9">
+                  <p style="position: relative; bottom: -18px; color: white;">Total Balance:</p>
+                  <div class="d-flex justify-content-center mb-2">
+                    <p class="mt-2 font-weight-bold" style="color: white; font-size: larger;">0.000100</p>
+                    <p class="mt-2 font-weight-bold" style="color: white; font-size: larger;"> LIP</p>
+                  </div>
+                </div>
+              </div>
+              <button  class="btn btn-lip btn-connect mb-2" type="button" id="logoutButton">Logout metamask</button>
             </div>
           </div>
         </li>

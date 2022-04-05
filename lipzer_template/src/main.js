@@ -55,7 +55,7 @@ function begin() {
     }, function (error){
         console.log(error)
     });
-    ("#navup").html(menu)
+    // ("#upnav").html(menu)
     if (!window.ethereum) {
         loginButton.innerText = 'MetaMask is not installed'
         loginButton.classList.remove('bg-purple-500', 'text-white')
@@ -82,6 +82,8 @@ function signOutOfMetaMask() {
     userWallet.innerText = ''
     loginButton.style = 'display: block;'
     logged.style = 'display: none;'
+    Control.classList = 'nav-item'
+    DivLipValue.classList = 'd-flex justify-content-center mr-3'
 
     logoutButton.removeEventListener('click', signOutOfMetaMask)
     setTimeout(() => {
@@ -93,7 +95,7 @@ function signOutOfMetaMask() {
 
 async function loginWithMetaMask() {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
-    const chainId = 97
+    const chainId = 56
 
     // var version = web3.version.api;
     // console.log("Using web3 version: " + version);
@@ -114,10 +116,10 @@ async function loginWithMetaMask() {
                     method: 'wallet_addEthereumChain',
                     params: [
                         {
-                            chainName: 'BINANCE TEST',
+                            chainName: 'BINANCE SMART CHAIN',
                             chainId: web3.utils.toHex(chainId),
-                            nativeCurrency: { name: 'TBNB', decimals: 18, symbol: 'TBNB' },
-                            rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545/'],
+                            nativeCurrency: { name: 'BNB', decimals: 18, symbol: 'BNB' },
+                            rpcUrls: ['https://bsc-dataseed1.binance.org'],
                         },
                     ],
                 });
@@ -148,6 +150,8 @@ function connected(userWalletAddress) {
     userWallet.innerText = userWalletAddress
     loginButton.style = 'display: none;'
     logged.style = 'display: block;'
+    Control.classList = 'col-lg-2 nav-item'
+    DivLipValue.classList = 'd-flex justify-content-center mr-2'
 
     loginButton.removeEventListener('click', loginWithMetaMask)
     setTimeout(() => {
