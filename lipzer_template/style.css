@@ -200,6 +200,95 @@
   }
 
 }
+@media (min-width: 576px) {
+  .card-columns{
+    column-count: 2;
+  }
+  .btn-light{
+    color: #EF0048;
+    border: transparent;
+    border-radius: 20px;
+  }
+  .LipValue{
+    color: #ff0048;
+    position: relative;
+    top: 6px;
+  }
+  .L-style{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 9px;
+  }
+  .dropdown-menu.show{
+    display: block;
+    right: 0;
+    left: auto;
+    background: #010e24;
+    border-radius: 10px;
+    min-width: 26rem;
+
+  }
+  .userAdress{
+    color: white;
+    background: #FF0048;
+    border-radius: 10px;
+  }
+  .ajust-height-background{
+    height: 1562px;
+  }
+  .ajust-height-container1{
+    height: 39%;
+  }
+  .ajust-height-container2{
+    height: 900px;
+  }
+  .btn-connect{
+    color: #EF0048 !important; 
+    background-color: white !important;
+    border: transparent !important;
+    border-radius: 20px !important;
+  }
+  .btn-connect:hover{
+    opacity: 90%;
+  }
+  .img-connected{
+    width: 90%;
+    display: block;
+    background: #fdfdfd;
+    border-radius: 101px;
+  }
+  .img-connected:hover{
+    cursor: pointer;
+    opacity: 80%;
+  }
+  .img-connected:active{
+    padding: 1px;
+    cursor: pointer;
+  }
+  .background{
+    background-image: url('img/bgnft.jpg');
+    background-repeat: no-repeat;
+    padding: 3em;
+    background-size: cover;
+  }
+  .columnsfooter{
+    flex-direction: unset!important;
+  }
+  .logofooter{
+    width: 150px;
+    position: relative;
+    bottom: 0px;
+    right: 0px;
+  }
+  .img_topo{
+    width: 80%;
+    margin-top: 0px;
+    left: 106px;
+    position: relative;
+  }
+
+}
 @media (min-width: 992px) {
   .btn-light{
     color: #EF0048;
