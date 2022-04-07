@@ -41,6 +41,9 @@
 }
 /* Media Queries */
 @media (min-width: 1px) {
+  .teste {
+    background-image: url(./img/logo.png); 
+  }
   .btn-light{
     color: #EF0048;
     border: transparent;
@@ -201,7 +204,10 @@
 
 }
 @media (min-width: 576px) {
-  .card-columns{
+  .teste {
+    background-image: url("./img/logo.png"); 
+  }
+  .card-columns1{
     column-count: 2;
   }
   .btn-light{
@@ -397,7 +403,7 @@
     border-radius: 20px;
   }
   .img-connected{
-      width: 7%;
+      width: 90%;
       display: block;
       background: #fdfdfd;
       border-radius: 101px;
@@ -619,7 +625,7 @@
   color: #d3d3d3;
 }
 .card_o{
-  background: #c70038;
+  background: none;
   box-shadow: none;
 }
 .title_card_down{
