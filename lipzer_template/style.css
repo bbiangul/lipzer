@@ -41,9 +41,6 @@
 }
 /* Media Queries */
 @media (min-width: 1px) {
-  .teste {
-    background-image: url(./img/logo.png); 
-  }
   .btn-light{
     color: #EF0048;
     border: transparent;
@@ -204,9 +201,6 @@
 
 }
 @media (min-width: 576px) {
-  .teste {
-    background-image: url("./img/logo.png"); 
-  }
   .card-columns1{
     column-count: 2;
   }
