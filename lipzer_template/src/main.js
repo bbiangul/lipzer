@@ -6,8 +6,10 @@
 // const FARMING_CONTRACT_ADDRESS = "0x2aE5d5EEaa65F0E6F1489Ef67fd3058D3CcaDf19"
 // const LP_TOKEN_ADDRESS = "0x880921d4FC666412A1a4B4AC35b3495cB0cc0281"
 
+const liPrice = document.getElementById('liPrice')
 const loginButton = document.getElementById('loginButton')
 const logoutButton = document.getElementById('logoutButton')
+const buylip = document.getElementById('buylip')
 const userWallet = document.getElementById('userWallet')
 const logged = document.getElementById('dropdownMenuButton')
 let abi;
@@ -67,11 +69,12 @@ function begin() {
 
     web3 = new Web3(window.ethereum);
     web3.eth.net.isListening()
-        .then((ac) => {
-            console.log('is connected' + ac)
-            getc()
-        })
-        .catch(e => console.log('Wow. Something went wrong: ' + e));
+
+    .then((ac) => {
+        console.log('is connected' + ac)
+        getc()
+    })
+    .catch(e => console.log('Wow. Something went wrong: ' + e));
 
     $.getJSON("staking.json", function (result) {
         abi = result
@@ -82,8 +85,8 @@ function signOutOfMetaMask() {
     userWallet.innerText = ''
     loginButton.style = 'display: block;'
     logged.style = 'display: none;'
-    Control.classList = 'nav-item'
-    DivLipValue.classList = 'd-flex justify-content-center mr-3'
+    DivLipValue.classList = 'd-flex justify-content-center mr-3 DivLipValue'
+    liPrice.classList = 'li-price'
 
     logoutButton.removeEventListener('click', signOutOfMetaMask)
     setTimeout(() => {
@@ -150,8 +153,9 @@ function connected(userWalletAddress) {
     userWallet.innerText = userWalletAddress
     loginButton.style = 'display: none;'
     logged.style = 'display: block;'
-    Control.classList = 'col-lg-2 nav-item'
-    DivLipValue.classList = 'd-flex justify-content-center mr-2'
+    DivLipValue.classList = 'd-flex justify-content-center mr-2 DivLipValue'
+    liPrice.classList = 'li-price active'
+    buylip.innerText = "Buy lip"
 
     loginButton.removeEventListener('click', loginWithMetaMask)
     setTimeout(() => {
@@ -176,9 +180,12 @@ async function getValue() {
         function (result) {
             console.log(result);
         }, function (err) {
-            //deu merda
+            //deu erro
             console.log(result);
         }
     );
 
 }
+
+var navbar = '<div class="navbar navbar-expand-lg navbarcolor navbar-dark"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <img class="logo col-lg-auto col-md-auto mr-auto" src="img/logo.png"> <div class="collapse navbar-collapse" id="navbarTogglerDemo01"> <ul class="navbar-nav d-flex justify-content-around"> <li class="nav-item active"> <a href="index.html" class="nav-link">Home</a> </li><li class="nav-item"> <a href="nft.html" class="nav-link">NFT</a> </li><li class="nav-item"> <a href="earn.html" class="nav-link">Earn</a> </li><li class="nav-item"> <a href="marketplace.html" class="nav-link">Marketplace</a> </li><li class="nav-item mr-auto"> <a href="invite.html" class="nav-link">Friends</a> </li><li class="nav-item li-price" id="liPrice"> <div id="DivLipValue" class="d-flex justify-content-center mr-3 DivLipValue"> <img class="L-style" src="./img/L.png"/> <p class="font-weight-bold LipValue">$5,24</p></div></li><li class="nav-item"> <div> <button type="button" id="loginButton" class="btn btn-light block">Connect to Wallet</button> <div class="dropdown"> <img src="./img/profile.png" class="dropdown-toggle img-connected" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"/> <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton"> <div class=""> <p class="p-user" id="userWallet"></p></div><div class="d-flex justify-content-center"> <div style="background-color: #071b3c; border-radius: 20px;" class="mb-3 col-9"> <p style="bottom: -18px; color: white;">Total Balance:</p><div class="d-flex justify-content-center mb-2"> <p class="mt-2 font-weight-bold" style="color: white; font-size: larger;">0.000100</p><p class="mt-2 font-weight-bold" style="color: white; font-size: larger;"> LIP</p></div></div></div><button class="btn btn-lip btn-connect mb-2" type="button" id="logoutButton">Logout metamask</button> </div></div></div></li></ul> </div></div>';
+document.getElementById('navbar').innerHTML = navbar;
